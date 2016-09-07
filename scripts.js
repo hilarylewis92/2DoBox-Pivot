@@ -4,10 +4,10 @@ var $save = $('.save-btn');
 
 $save.on('click', function() {
   makeIdeaList();
-  clearField($body, $title);
+  clearField($('.title-input'), $('.body-input'));
 });
 
-function makeIdeaList($title, $body) {
+function makeIdeaList() {
   return $('.idea-list').append(`
       <li class="idea">
         <span>${$('.title-input').val()}</span>
@@ -16,19 +16,17 @@ function makeIdeaList($title, $body) {
   `);
 }
 
-// $title.on('click', function() {
-//   clearField($title);
-// });
+$('.title-input').on('click', function() {
+  clearField($('.title-input'));
+});
 
-// $body.on('click', function() {
-//   clearField($body);
-// });
+$('.body-input').on('click', function() {
+  clearField($('.body-input'));
+});
 
-// function clearField(element1, element2) {
-//   element1.val('');
-//   element2.val('');
-// }
+function clearField(element1, element2) {
+  element1.val('');
+  element2.val('');
+}
 
-// function addIdea() {
-//
-// }
+function 
