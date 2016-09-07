@@ -9,9 +9,10 @@ $save.on('click', function() {
 
 function makeIdeaList() {
   return $('.idea-list').append(`
-      <li class="idea">
+      <li class="idea" id=${Date.now()}>
         <span>${$('.title-input').val()}</span>
         <span>${$('.body-input').val()}</span>
+        <span>quality</span>
       </li>
   `);
 }
@@ -28,5 +29,3 @@ function clearField(element1, element2) {
   element1.val('');
   element2.val('');
 }
-
-function 
