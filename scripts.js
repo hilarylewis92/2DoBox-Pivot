@@ -1,5 +1,5 @@
-// var $title = $('.title-input').val();
-// var $body = $('.body-input').val();
+var title = $('.title-input').val();
+var body = $('.body-input').val();
 var $save = $('.save-btn');
 
 
@@ -36,20 +36,28 @@ function upClick() {
 }
 
 
+var storage = []
 
+function makeIdeaList(title, body) {
+  var ideaListItem = ([Date.now(), $('.title-input').val(), $('.body-input').val()]);
 
-function makeIdeaList(idea) {
+  JSON.stringify(ideaListItem);
+
+  var stringifiedList = JSON.stringify(ideaListItem);
+
+  localStorage.setItem('list', stringifiedList);
+
+  storage.push(ideaListItem);
   return $('.idea-list').append(`
       <li class="idea" id= ${Date.now()}>
+        <input class="icon delete-icon" type="image" src="./images/delete.svg"/>
         <span>${$('.title-input').val()}</span>
         <span>${$('.body-input').val()}</span>
         <input class="up-btn" type="image" src="icons/upvote.svg">
         <input class="down-btn" type="image" src="icons/downvote.svg">
-
         <span class="quality">quality:swill</span>
       </li>
   `);
-
 }
 
 $('.title-input').on('click', function() {
@@ -66,13 +74,12 @@ function clearField(element) {
   }
 }
 
+$('.idea-list').on('click', '.delete-icon', function() {
+  $(this).parent().remove();
+  deleteIdea();
+});
 
-// function createIdea() {
-//   var ideaTitle = $('.title-input-field').val();
-//   var ideaBody = $('.body-input-field').val();
-//   var uniqueId = Date.now();
-//   var ideaQuality = "swill";
-//   var idea = { id: uniqueId, title: ideaTitle, body: ideaBody, quality: ideaQuality };
-//   ideaStore.addIdea(idea);
-//   render(ideaStore.getIdeas());
-// }
+function deleteIdea () {
+  localStorage.getItem('ideaListItem');
+  JSON.parse('ideaListItem');
+}
