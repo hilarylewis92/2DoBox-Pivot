@@ -8,35 +8,35 @@ $save.on('click', function() {
   makeIdeaList();
   clearField($('.title-input'));
   clearField($('.body-input'));
-  downClick()
-  upClick()
+  downClick();
+  upClick();
 
 });
 
 function downClick() {
   $('.down-btn').on('click', function() {
     if ($('.quality').text() === "quality:genius") {
-      $('.quality').html("quality:plausible")
+      $('.quality').html("quality:plausible");
     }
     else if ($('.quality').text() === "quality:plausible") {
-      $('.quality').html("quality:swill")
+      $('.quality').html("quality:swill");
     }
-  })
+  });
 }
 
 function upClick() {
   $('.up-btn').on('click', function() {
     if ($('.quality').text() === "quality:swill") {
-      $('.quality').html("quality:plausible")
+      $('.quality').html("quality:plausible");
     }
     else if ($('.quality').text() === "quality:plausible") {
-      $('.quality').html("quality:genius")
+      $('.quality').html("quality:genius");
     }
-  })
+  });
 }
 
 
-var storage = []
+var storage = [];
 
 function makeIdeaList(title, body) {
   var ideaListItem = ([Date.now(), $('.title-input').val(), $('.body-input').val()]);
@@ -50,7 +50,7 @@ function makeIdeaList(title, body) {
   storage.push(ideaListItem);
   return $('.idea-list').append(`
       <li class="idea" id= ${Date.now()}>
-        <input class="icon delete-icon" type="image" src="./images/delete.svg"/>
+        <input class="delete-btn" type="image" src="./images/delete.svg"/>
         <span>${$('.title-input').val()}</span>
         <span>${$('.body-input').val()}</span>
         <input class="up-btn" type="image" src="icons/upvote.svg">
@@ -74,7 +74,7 @@ function clearField(element) {
   }
 }
 
-$('.idea-list').on('click', '.delete-icon', function() {
+$('.idea-list').on('click', '.delete-btn', function() {
   $(this).parent().remove();
   deleteIdea();
 });

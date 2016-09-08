@@ -61,9 +61,17 @@ li {
   font-size: 30px;
 }
 
+.up-btn {
+  length: 30px;
+  width: 30px;
+}
 
+.down-btn {
+  length: 30px;
+  width: 30px;
+}
 
-.icon {
+.delete-btn {
   length: 30px;
   width: 30px;
 }
