@@ -2,12 +2,41 @@ var title = $('.title-input').val();
 var body = $('.body-input').val();
 var $save = $('.save-btn');
 
+
+
 $save.on('click', function() {
   makeIdeaList();
-  clearField($('.title-input'), $('.body-input'));
+  clearField($('.title-input'));
+  clearField($('.body-input'));
+  downClick()
+  upClick()
+
 });
 
-var storage = [];
+function downClick() {
+  $('.down-btn').on('click', function() {
+    if ($('.quality').text() === "quality:genius") {
+      $('.quality').html("quality:plausible")
+    }
+    else if ($('.quality').text() === "quality:plausible") {
+      $('.quality').html("quality:swill")
+    }
+  })
+}
+
+function upClick() {
+  $('.up-btn').on('click', function() {
+    if ($('.quality').text() === "quality:swill") {
+      $('.quality').html("quality:plausible")
+    }
+    else if ($('.quality').text() === "quality:plausible") {
+      $('.quality').html("quality:genius")
+    }
+  })
+}
+
+
+var storage = []
 
 function makeIdeaList(title, body) {
   var ideaListItem = ([Date.now(), $('.title-input').val(), $('.body-input').val()]);
@@ -19,15 +48,14 @@ function makeIdeaList(title, body) {
   localStorage.setItem('list', stringifiedList);
 
   storage.push(ideaListItem);
-
   return $('.idea-list').append(`
-      <li class="idea" id=${Date.now()}>
-        <span class="title">${$('.title-input').val()}</span>
-        <img class="icon delete-icon" src="./images/delete.svg" alt="delete" /><br>
-        <span>${$('.body-input').val()}</span><br>
-        <img class="icon upvote-icon" src="./images/upvote.svg">
-        <img class="icon downvote-icon" src="./images/downvote.svg">
-        <span>quality: </span>
+      <li class="idea" id= ${Date.now()}>
+        <input class="icon delete-icon" type="image" src="./images/delete.svg"/>
+        <span>${$('.title-input').val()}</span>
+        <span>${$('.body-input').val()}</span>
+        <input class="up-btn" type="image" src="icons/upvote.svg">
+        <input class="down-btn" type="image" src="icons/downvote.svg">
+        <span class="quality">quality:swill</span>
       </li>
   `);
 }
@@ -40,9 +68,10 @@ $('.body-input').on('click', function() {
   clearField($('.body-input'));
 });
 
-function clearField(element1, element2) {
-  element1.val('');
-  element2.val('');
+function clearField(element) {
+  if (element.val !== "") {
+    element.val('');
+  }
 }
 
 $('.idea-list').on('click', '.delete-icon', function() {
