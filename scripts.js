@@ -1,7 +1,7 @@
 // var $title = $('.title-input').val();
 // var $body = $('.body-input').val();
 var $save = $('.save-btn');
-var counter = 0
+
 
 
 $save.on('click', function() {
@@ -9,30 +9,36 @@ $save.on('click', function() {
   clearField($('.title-input'));
   clearField($('.body-input'));
   downClick()
-  qualityCounter()
+  upClick()
+
 });
 
-function downClick(counter) {
-$('.down-btn').on('click', function() {
-qualityCounter(counter)
-counter = (counter --);
-console.log(counter)
-})
+function downClick() {
+  $('.down-btn').on('click', function() {
+    if ($('.quality').text(this) === "quality:genius") {
+      this.html("quality:plausible")
+    }
+    else if ($('.quality').text(this) === "quality:plausible") {
+      this.html("quality:swill")
+    }
+  })
 }
 
-function qualityCounter() {
-  if (counter === 0) {
-    return $('.quality').html("quality:swill");
-  };
-  if (counter ===1) {
-    return $('.quality').html("quality:plausible");
-  };
-  if (counter ===2) {
-    return $('.quality').html("quality:genius");
-  }
+function upClick() {
+  $('.up-btn').on('click', function() {
+    if ($('.quality').text() === "quality:swill") {
+      $('.quality').html("quality:plausible")
+    }
+    else if ($('.quality').text() === "quality:plausible") {
+      $('.quality').html("quality:genius")
+    }
+  })
 }
 
-function makeIdeaList() {
+
+
+
+function makeIdeaList(idea) {
   return $('.idea-list').append(`
       <li class="idea" id= ${Date.now()}>
         <span>${$('.title-input').val()}</span>
@@ -43,9 +49,8 @@ function makeIdeaList() {
         <span class="quality">quality:swill</span>
       </li>
   `);
+
 }
-
-
 
 $('.title-input').on('click', function() {
   clearField($('.title-input'));
@@ -60,3 +65,14 @@ function clearField(element) {
     element.val('');
   }
 }
+
+
+// function createIdea() {
+//   var ideaTitle = $('.title-input-field').val();
+//   var ideaBody = $('.body-input-field').val();
+//   var uniqueId = Date.now();
+//   var ideaQuality = "swill";
+//   var idea = { id: uniqueId, title: ideaTitle, body: ideaBody, quality: ideaQuality };
+//   ideaStore.addIdea(idea);
+//   render(ideaStore.getIdeas());
+// }
