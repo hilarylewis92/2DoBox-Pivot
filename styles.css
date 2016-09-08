@@ -22,9 +22,10 @@ body {
 
 input {
   font-size: 25px;
-  color: gray;
+  color: rgb(200, 200, 200);
   width: 50%;
   margin: 10px;
+  outline: none;
 }
 
 .save-btn {
@@ -45,9 +46,32 @@ input {
 }
 
 ul {
-  border-bottom: 1px solid #D1D3D4;
-  width: 400px;
+  width: 50%;
   margin: auto;
+}
+
+li {
+  font-size: 20px;
+  text-align: left;
+  border-bottom: 1px solid #D1D3D4;
+  padding: 25px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+
+
+.icon {
+  length: 30px;
+  width: 30px;
+}
+
+.delete-icon:hover {
+  background-image: url('images/delete-hover.svg');
+  length: 30px;
+  width: 30px;
 }
 
 @media screen and (max-width: 600px){
