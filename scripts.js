@@ -4,11 +4,22 @@ var $save = $('.save-btn');
 
 $save.on('click', function() {
   makeIdeaList();
-  // JSON
   clearField($('.title-input'), $('.body-input'));
 });
 
+var storage = [];
+
 function makeIdeaList(title, body) {
+  var ideaListItem = ([Date.now(), $('.title-input').val(), $('.body-input').val()]);
+
+  JSON.stringify(ideaListItem);
+
+  var stringifiedList = JSON.stringify(ideaListItem);
+
+  localStorage.setItem('list', stringifiedList);
+
+  storage.push(ideaListItem);
+
   return $('.idea-list').append(`
       <li class="idea" id=${Date.now()}>
         <span class="title">${$('.title-input').val()}</span>
@@ -36,4 +47,10 @@ function clearField(element1, element2) {
 
 $('.idea-list').on('click', '.delete-icon', function() {
   $(this).parent().remove();
+  deleteIdea();
 });
+
+function deleteIdea () {
+  localStorage.getItem('ideaListItem');
+  JSON.parse('ideaListItem');
+}
