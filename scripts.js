@@ -15,11 +15,11 @@ $save.on('click', function() {
 
 function downClick() {
   $('.down-btn').on('click', function() {
-    if ($('.quality').text(this) === "quality:genius") {
-      this.html("quality:plausible")
+    if ($('.quality').text() === "quality:genius") {
+      $('.quality').html("quality:plausible")
     }
-    else if ($('.quality').text(this) === "quality:plausible") {
-      this.html("quality:swill")
+    else if ($('.quality').text() === "quality:plausible") {
+      $('.quality').html("quality:swill")
     }
   })
 }
