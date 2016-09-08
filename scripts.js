@@ -1,63 +1,88 @@
-var title = $('.title-input').val();
-var body = $('.body-input').val();
+var storage = getLocalStorage() || [];
 var $save = $('.save-btn');
-
-
+renderToPage();
 
 $save.on('click', function() {
-  makeIdeaList();
+  var $title = $('.title-input').val();
+  var $body = $('.body-input').val();
+  makeIdeaList($title, $body);
   clearField($('.title-input'));
   clearField($('.body-input'));
   downClick();
   upClick();
-
+  edit();
 });
+
+function getLocalStorage() {
+  return JSON.parse(localStorage.getItem('list'));
+}
 
 function downClick() {
   $('.down-btn').on('click', function() {
-    if ($('.quality').text() === "quality:genius") {
-      $('.quality').html("quality:plausible");
+    var $quality = $(this).siblings().closest('.quality');
+    if ($quality.text() === "quality:genius") {
+      $quality.html("quality:plausible");
     }
-    else if ($('.quality').text() === "quality:plausible") {
-      $('.quality').html("quality:swill");
+    else if ($quality.text() === "quality:plausible") {
+      idea.quality = 'Swill';
+      $quality.html("quality:Swill");
     }
   });
 }
 
 function upClick() {
   $('.up-btn').on('click', function() {
-    if ($('.quality').text() === "quality:swill") {
-      $('.quality').html("quality:plausible");
+    var $quality = $(this).siblings().closest('.quality');
+    if ($quality.text() === "quality:swill") {
+      $quality.html("quality:plausible");
     }
-    else if ($('.quality').text() === "quality:plausible") {
-      $('.quality').html("quality:genius");
+    else if ($quality.text() === "quality:plausible") {
+      $quality.html("quality:genius");
     }
   });
 }
 
+function renderToPage() {
+  storage.forEach(function(idea) {
+    appendIdea(idea);
+  });
+}
 
-var storage = [];
+
+function Idea(title, body){
+  this.title = title;
+  this.body = body;
+  this.id = Date.now();
+  this.quality = 'Swill';
+}
 
 function makeIdeaList(title, body) {
-  var ideaListItem = ([Date.now(), $('.title-input').val(), $('.body-input').val()]);
+  var idea = new Idea(title, body);
 
-  JSON.stringify(ideaListItem);
+  storage.push(idea);
 
-  var stringifiedList = JSON.stringify(ideaListItem);
+  localStorage.setItem('list', JSON.stringify(storage));
+  appendIdea(idea);
+}
 
-  localStorage.setItem('list', stringifiedList);
-
-  storage.push(ideaListItem);
+function appendIdea(idea) {
   return $('.idea-list').append(`
-      <li class="idea" id= ${Date.now()}>
+      <li class="idea" id= ${idea.id}>
         <input class="delete-btn" type="image" src="./images/delete.svg"/>
-        <span>${$('.title-input').val()}</span>
-        <span>${$('.body-input').val()}</span>
+        <span class="edit-title">${idea.title}</span>
+        <span>${idea.body}</span>
         <input class="up-btn" type="image" src="icons/upvote.svg">
         <input class="down-btn" type="image" src="icons/downvote.svg">
-        <span class="quality">quality:swill</span>
+        <span class="quality">quality:${idea.quality}</span>
       </li>
   `);
+}
+
+function edit() {
+  $('.edit-title').on('click', function() {
+    var $fill = $(this);
+    $(this).html($('<input type=text/>').val( $fill.text() ));
+  });
 }
 
 $('.title-input').on('click', function() {
