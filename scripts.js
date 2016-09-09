@@ -1,5 +1,7 @@
 var storage = getLocalStorage() || [];
 renderToPage();
+downClick();
+upClick();
 
 $('.save-btn').on('click', function() {
   var $title = $('.title-input').val();
@@ -7,8 +9,7 @@ $('.save-btn').on('click', function() {
   makeIdeaList($title, $body);
   clearField($('.title-input'));
   clearField($('.body-input'));
-  downClick();
-  upClick();
+
   edit();
 });
 
@@ -18,23 +19,26 @@ function getLocalStorage() {
 
 function downClick() {
   $('.down-btn').on('click', function() {
-    var $quality = $(this).siblings().closest('.quality');
-    if ($quality.text() === "quality: genius") {
-      $quality.html("quality: plausible");
+    var $quality = $(this).siblings().filter('.quality');
+    if ($quality.text() === "quality:plausible") {
+      // return idea.quality = 'Swill';
+      return $quality.html("quality:swill");
     }
-    else if ($quality.text() === "quality: plausible");
-      $quality.html("quality: swill");
+    if ($quality.text() === "quality:genius") {
+      return $quality.html("quality:plausible");
+    }
   });
-}
+  }
 
 function upClick() {
   $('.up-btn').on('click', function() {
-    var $quality = $(this).siblings().closest('.quality');
-    if ($quality.text() === "quality: swill") {
-      $quality.html("quality:plausible");
+
+    var $quality = $(this).siblings().filter('.quality');
+    if ($quality.text() === "quality:plausible") {
+      return $quality.html("quality:genius");
     }
-    else if ($quality.text() === "quality: plausible") {
-      $quality.html("quality: genius");
+    if ($quality.text() === "quality:swill") {
+      return $quality.html("quality:plausible");
     }
   });
 }
@@ -42,6 +46,7 @@ function upClick() {
 function renderToPage() {
   storage.forEach(function(idea) {
     appendIdea(idea);
+
   });
 }
 
