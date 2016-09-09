@@ -87,11 +87,13 @@ li {
   padding-bottom: 20px;
 }
 .up-btn {
+  url('./images/vote.svg');
   length: 30px;
   width: 30px;
 }
 
 .down-btn {
+  background-image: url('./images/downvote.svg');
   length: 30px;
   width: 30px;
 }
