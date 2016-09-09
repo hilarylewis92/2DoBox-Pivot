@@ -87,27 +87,47 @@ li {
   padding-bottom: 20px;
 }
 .up-btn {
-  url('./images/vote.svg');
-  length: 30px;
+  background-image: url('images/upvote.svg');
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  width: 30px;
+}
+
+.up-btn:hover {
+  background-image: url('images/upvote-hover.svg');
+  background-color: transparent;
+  border: none;
+  height: 30px;
   width: 30px;
 }
 
 .down-btn {
-  background-image: url('./images/downvote.svg');
-  length: 30px;
+  background-image: url('images/downvote.svg');
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  width: 30px;
+}
+
+.down-btn:hover {
+  background-image: url('images/downvote-hover.svg');
+  background-color: transparent;
+  border: none;
+  height: 30px;
   width: 30px;
 }
 
 .delete-btn {
-  background-image: url('./images/delete.svg');
-  length: 30px;
+  background: url('images/delete.svg') no-repeat;
+  border: none;
+  height: 30px;
   width: 30px;
-  float: right;
 }
 
 .delete-btn:hover {
   background-image: url('images/delete-hover.svg');
-  length: 30px;
+  height: 30px;
   width: 30px;
 }
 
