@@ -127,8 +127,8 @@ function clearField(element) {
 
 function removeIdea(id) {
     var id = parseInt(id);
-    var newStorage = storage.filter(function(r) {
-      return r.id !== id;
+    storage = storage.filter(function(idea) {
+      return idea.id != id;
     });
     // localStorage.setItem('list', JSON.stringify(newStorage));
   }
@@ -137,9 +137,9 @@ $('.delete-btn').on('click', function() {
   var id = $(this).parent().parent().attr('id');
   $(this).parent().parent().remove();
 
-  localStorage.setItem('list', JSON.stringify(newStorage));
-
   removeIdea(id);
+  localStorage.setItem('list', JSON.stringify(storage));
+
 });
 
 
