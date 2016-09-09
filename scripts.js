@@ -1,8 +1,7 @@
 var storage = getLocalStorage() || [];
-var $save = $('.save-btn');
 renderToPage();
 
-$save.on('click', function() {
+$('.save-btn').on('click', function() {
   var $title = $('.title-input').val();
   var $body = $('.body-input').val();
   makeIdeaList($title, $body);
@@ -20,24 +19,22 @@ function getLocalStorage() {
 function downClick() {
   $('.down-btn').on('click', function() {
     var $quality = $(this).siblings().closest('.quality');
-    if ($quality.text() === "quality:genius") {
-      $quality.html("quality:plausible");
+    if ($quality.text() === "quality: genius") {
+      $quality.html("quality: plausible");
     }
-    else if ($quality.text() === "quality:plausible") {
-      idea.quality = 'Swill';
-      $quality.html("quality:Swill");
-    }
+    else if ($quality.text() === "quality: plausible");
+      $quality.html("quality: swill");
   });
 }
 
 function upClick() {
   $('.up-btn').on('click', function() {
     var $quality = $(this).siblings().closest('.quality');
-    if ($quality.text() === "quality:swill") {
+    if ($quality.text() === "quality: swill") {
       $quality.html("quality:plausible");
     }
-    else if ($quality.text() === "quality:plausible") {
-      $quality.html("quality:genius");
+    else if ($quality.text() === "quality: plausible") {
+      $quality.html("quality: genius");
     }
   });
 }
@@ -53,14 +50,12 @@ function Idea(title, body){
   this.title = title;
   this.body = body;
   this.id = Date.now();
-  this.quality = 'Swill';
+  this.quality = 'swill';
 }
 
 function makeIdeaList(title, body) {
   var idea = new Idea(title, body);
-
   storage.push(idea);
-
   localStorage.setItem('list', JSON.stringify(storage));
   appendIdea(idea);
 }
@@ -68,12 +63,16 @@ function makeIdeaList(title, body) {
 function appendIdea(idea) {
   return $('.idea-list').append(`
       <li class="idea" id= ${idea.id}>
-        <input class="delete-btn" type="image" src="./images/delete.svg"/>
-        <span class="edit-title">${idea.title}</span>
-        <span>${idea.body}</span>
-        <input class="up-btn" type="image" src="icons/upvote.svg">
-        <input class="down-btn" type="image" src="icons/downvote.svg">
-        <span class="quality">quality:${idea.quality}</span>
+        <div class='first-line'>
+          <span class="title edit-title">${idea.title}</span>
+          <input class="delete-btn" type="image" src="./images/delete.svg"/>
+        </div>
+        <span class="body edit-body">${idea.body}</span>
+        <div class='third-line'>
+          <input class="up-btn" type="image" src="icons/upvote.svg">
+          <input class="down-btn" type="image" src="icons/downvote.svg">
+          <span class="quality">quality:${idea.quality}</span>
+        </div>
       </li>
   `);
 }
@@ -99,12 +98,25 @@ function clearField(element) {
   }
 }
 
-$('.idea-list').on('click', '.delete-btn', function() {
-  $(this).parent().remove();
-  deleteIdea();
+$('.delete-btn').on('click', function() {
+  $(this).parent().parent().remove();
 });
 
-function deleteIdea () {
-  localStorage.getItem('ideaListItem');
-  JSON.parse('ideaListItem');
-}
+// $('.delete-btn').on('click', function() {
+//   var id = $(this).data('idea');
+//   $(this).remove();
+//   localStorage.clear();
+//
+// });
+//
+// function deleteIdea () {
+//   storage.pull(idea);
+//   localStorage.getItem('list', JSON.parse(storage));
+//
+  // JSON.parse('ideaListItem');
+
+  // var idea = new Idea(title, body);
+  // storage.push(idea);
+  // localStorage.setItem('list', JSON.stringify(storage));
+  // appendIdea(idea);
+// }
