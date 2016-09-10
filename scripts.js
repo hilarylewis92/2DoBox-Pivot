@@ -6,11 +6,8 @@ $('.save-btn').on('click', function() {
   var $title = $('.title-input').val();
   var $body = $('.body-input').val();
   makeIdeaList($title, $body);
-
   clearField($('.title-input'));
   clearField($('.body-input'));
-
-  edit();
 });
 
 function getLocalStorage() {
@@ -24,10 +21,20 @@ var downQualities = {
 };
 
   $('.idea-list').on('click', '.down-btn', function() {
+
     var $quality = $(this).siblings('span').children();
     var newQuality = downQualities[$quality.text()];
     $quality.text(newQuality);
+    var id = $(this).parents('.idea').attr('id')
+    changeQuality(id, newQuality);
   });
+
+  function changeQuality(id, newQuality, idea) {
+    id = parseInt(id);
+    var idea = this.findIdeaById(id);
+    idea.quality = newQuality;
+    this.makeIdeaList()
+    }
 
 
   var upQualities = {
@@ -68,10 +75,10 @@ function appendIdea(idea) {
   return $('.idea-list').append(`
       <li class="idea" id= ${idea.id}>
         <div class='first-line'>
-          <span class="title edit-title">${idea.title}</span>
+          <span contenteditable class="title edit-title edit-content">${idea.title}</span>
           <button type="button" class="delete-btn"/></button>
         </div>
-        <span class="body edit-body">${idea.body}</span>
+        <span contenteditable class="body edit-body edit-content">${idea.body}</span>
         <div class='third-line'>
           <button type="button" class="up-btn"/></button>
           <button type="button" class="down-btn"/></button>
@@ -81,12 +88,48 @@ function appendIdea(idea) {
   `);
 }
 
-function edit() {
-  $('.edit-title').on('click', function() {
-    var $fill = $(this);
-    $(this).html($('<input type=text/>').val( $fill.text() ));
+function findIdeaById(id) {
+  return this.storage.find(function(idea) {
+    return idea.id === id;
   });
 }
+
+
+function editTitle(id, newTitle, idea) {
+  id = parseInt(id);
+  var idea = this.findIdeaById(id);
+  idea.title = newTitle;
+  this.makeIdeaList();
+}
+
+$('.idea-list').on('focusout', '.edit-title', function() {
+  var id = $(this).parents('.idea').attr('id');
+  var newTitle = $(this).text();
+  editTitle(id, newTitle);
+});
+
+function editBody(id, newBody, idea) {
+  id = parseInt(id);
+  var idea = this.findIdeaById(id);
+  idea.body = newBody;
+  this.makeIdeaList();
+}
+
+$('.idea-list').on('focusout', '.edit-body', function() {
+  var id = $(this).parents('.idea').attr('id');
+  var newBody = $(this).text();
+  editBody(id, newBody);
+});
+
+$('.idea-list').keypress(function(event) {
+  if (event.which === 13) {
+    $('.edit-content').prop('contenteditable', false);
+    setTimeout(function() {
+      $('.edit-content').prop('contenteditable', true);
+    }, 10);
+  }
+});
+
 
 $('.title-input').on('click', function() {
   clearField($('.title-input'));
