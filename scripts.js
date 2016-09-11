@@ -8,9 +8,7 @@ $('.save-btn').on('click', function() {
   makeIdeaList($title, $body);
   clearField($('.title-input'));
   clearField($('.body-input'));
-  downClick();
-  upClick();
-  edit();
+
 });
 
 function clearField(element) {
@@ -45,7 +43,7 @@ function Idea(title, body){
 }
 
 function appendIdea(idea) {
-  return $('.idea-list').append(`
+  return $('.idea-list').prepend(`
       <li class="idea" id= ${idea.id}>
         <div class='first-line'>
           <span contenteditable class="title edit-title edit-content">${idea.title}</span>
@@ -72,7 +70,7 @@ function changeQuality(id, newQuality, idea) {
   id = parseInt(id);
   var idea = this.findIdeaById(id);
   idea.quality = newQuality;
-  this.makeIdeaList();
+  localStorage.setItem('list', JSON.stringify(storage));
 }
 
 var upQualities = {
@@ -85,6 +83,8 @@ $('.idea-list').on('click', '.up-btn',  function() {
     var $quality = $(this).siblings('span').children();
     var newQuality = upQualities[$quality.text()];
     $quality.text(newQuality);
+    var id = $(this).parents('.idea').attr('id');
+    changeQuality(id, newQuality);
 });
 
 var downQualities = {
@@ -97,8 +97,8 @@ $('.idea-list').on('click', '.down-btn', function() {
     var $quality = $(this).siblings('span').children();
     var newQuality = downQualities[$quality.text()];
     $quality.text(newQuality);
-    // var id = $(this).parents('.idea').attr('id');
-    // changeQuality(id, newQuality);
+    var id = $(this).parents('.idea').attr('id');
+    changeQuality(id, newQuality);
 });
 
 function findIdeaById(id) {
