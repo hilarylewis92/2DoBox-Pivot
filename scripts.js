@@ -146,10 +146,8 @@ $('.search-input').on('click', function() {
   clearField($('.search-input'));
 });
 
-
-var title = $('.search-input').val();
-
 function findIdeaByTitle(title) {
+  var title = $('.search-input').val();
   return this.storage.filter(function(idea) {
     return idea.title === title;
   });
@@ -157,22 +155,27 @@ function findIdeaByTitle(title) {
 
 $('.search-input').keypress(function(event) {
   if (event.which === 13) {
-    debugger;
-    var title = $('.search-input').val();
-    findIdeaByTitle(title);
+    findIdeaByTitle();
     }
 });
 
+// function findIdeaByBody() {
+//   var body = $('.search-input').val();
+//   return this.storage.filter(function(idea) {
+//     return idea.body === body;
+//   });
+// }
 
-
-
-
-function findIdeaByBody() {
-  var body = $('.search-input').val();
-  return this.storage.filter(function(idea) {
-    return idea.body === body;
-  });
-}
+$('.search-input').keypress(function(event) {
+  if (event.which === 13) {
+    var body = $('.search-input').val();
+    function findIdeaByBody(body) {
+      return this.storage.filter(function(idea) {
+        return idea.body === body;
+      });
+    }
+  }
+});
 
 function removeIdea(id) {
     var id = parseInt(id);
