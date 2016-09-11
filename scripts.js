@@ -111,7 +111,7 @@ function editTitle(id, newTitle, idea) {
   id = parseInt(id);
   var idea = this.findIdeaById(id);
   idea.title = newTitle;
-  this.makeIdeaList();
+  localStorage.setItem('list', JSON.stringify(storage));
 }
 
 $('.idea-list').on('focusout', '.edit-title', function() {
@@ -124,7 +124,7 @@ function editBody(id, newBody, idea) {
   id = parseInt(id);
   var idea = this.findIdeaById(id);
   idea.body = newBody;
-  this.makeIdeaList();
+  localStorage.setItem('list', JSON.stringify(storage));
 }
 
 $('.idea-list').on('focusout', '.edit-body', function() {
@@ -149,21 +149,30 @@ $('.search-input').on('click', function() {
 
 function findIdeaByTitle() {
   var title = $('.search-input').val();
-  return this.storage.find(function(idea) {
-    return idea.title === title;
+    return this.storage.filter(function(idea) {
+      return idea.title === title;
   });
+  appendIdea();
 }
+
+$('.search-input').keypress(function(event) {
+  if (event.which === 13) {
+    // console.log($('.search-input').val());
+    findIdeaByTitle();
+    findIdeaByBody();
+  }
+});
 
 function findIdeaByBody() {
   var body = $('.search-input').val();
-  return this.storage.find(function(idea) {
+  return this.storage.filter(function(idea) {
     return idea.body === body;
   });
 }
 
-function myTitle() {
-  $('.idea-list').innerHTML = storage.find(checkTitle);
-}
+// function myTitle() {
+//   $('.idea-list').innerHTML = storage.find(checkTitle);
+// }
 
 
 function removeIdea(id) {
