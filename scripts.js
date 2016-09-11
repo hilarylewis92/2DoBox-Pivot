@@ -10,7 +10,7 @@ $('.save-btn').on('click', function() {
   clearField($('.title-input'));
   clearField($('.body-input'));
   // downClick();
-  // upClick();
+  upClick();
   edit();
 });
 
@@ -45,7 +45,7 @@ var downQualities = {
     'genius' : 'genius'
   };
 
-// function upClick() {
+
   $('.up-btn').on('click',  function() {
     console.log('test');
     // var $quality = $(this).siblings().filter('.quality');
@@ -53,6 +53,7 @@ var downQualities = {
     var $quality = $(this).siblings('span').children();
     var newQuality = upQualities[$quality.text()];
     $quality.text(newQuality);
+  
 
     // if ($quality.text() === "quality:plausible") {
     //   return $quality.html("quality:genius");
@@ -130,16 +131,13 @@ function removeIdea(id) {
     storage = storage.filter(function(idea) {
       return idea.id != id;
     });
-    // localStorage.setItem('list', JSON.stringify(newStorage));
   }
 
 $('.delete-btn').on('click', function() {
   var id = $(this).parent().parent().attr('id');
   $(this).parent().parent().remove();
-
   removeIdea(id);
   localStorage.setItem('list', JSON.stringify(storage));
-
 });
 
 
