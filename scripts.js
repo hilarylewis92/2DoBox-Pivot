@@ -154,6 +154,13 @@ function findIdeaByTitle() {
   });
 }
 
+function findIdeaByBody() {
+  var body = $('.search-input').val();
+  return this.storage.find(function(idea) {
+    return idea.body === body;
+  });
+}
+
 function myTitle() {
   $('.idea-list').innerHTML = storage.find(checkTitle);
 }
