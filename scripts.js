@@ -142,6 +142,23 @@ $('.idea-list').keypress(function(event) {
   }
 });
 
+$('.search-input').on('click', function() {
+  clearField($('.search-input'));
+  findIdeaByTitle();
+});
+
+function findIdeaByTitle() {
+  var title = $('.search-input').val();
+  return this.storage.find(function(idea) {
+    return idea.title === title;
+  });
+}
+
+function myTitle() {
+  $('.idea-list').innerHTML = storage.find(checkTitle);
+}
+
+
 function removeIdea(id) {
     var id = parseInt(id);
     storage = storage.filter(function(idea) {
