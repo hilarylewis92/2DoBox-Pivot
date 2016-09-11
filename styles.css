@@ -26,6 +26,7 @@ input {
   width: 50%;
   margin: 10px;
   outline: none;
+
 }
 
 .save-btn {
@@ -67,7 +68,7 @@ li {
 
 .body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: #939598;
   margin-bottom: 20px;
   display: block;
@@ -92,6 +93,7 @@ li {
   border: none;
   height: 30px;
   width: 30px;
+  padding: 10px;
 }
 
 .up-btn:hover {
@@ -108,6 +110,8 @@ li {
   border: none;
   height: 30px;
   width: 30px;
+  padding: 10px;
+  margin: 0px 10px;
 }
 
 .down-btn:hover {
@@ -123,6 +127,7 @@ li {
   border: none;
   height: 30px;
   width: 30px;
+  float: right;
 }
 
 .delete-btn:hover {
@@ -132,20 +137,26 @@ li {
 }
 
 @media screen and (max-width: 600px){
-  .body-input {
-    height: 90px;
-    margin: top;
-  }
   .hero {
     height: 300px;
   }
 
-  h1 {
-    font-size: 30px;
-  }
-
   input {
     font-size: 20px;
+    width: 90%;
+  }
+
+  .body-input {
+    height: 90px;
+    vertical-align: : top;
+  }
+
+  ul {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 40px;
   }
 
   .title {

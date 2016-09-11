@@ -8,9 +8,9 @@ $('.save-btn').on('click', function() {
   makeIdeaList($title, $body);
   clearField($('.title-input'));
   clearField($('.body-input'));
-  downClick();
-  upClick();
-  edit();
+  // downClick();
+  // upClick();
+  // edit();
 });
 
 function clearField(element) {
@@ -55,7 +55,7 @@ function appendIdea(idea) {
         <div class='third-line'>
           <button type="button" class="up-btn"/></button>
           <button type="button" class="down-btn"/></button>
-          <span>quality:<span class="quality">${idea.quality}</span></span>
+          <span>quality: <span class="quality">${idea.quality}</span></span>
         </div>
       </li>
   `);
@@ -85,6 +85,7 @@ $('.idea-list').on('click', '.up-btn',  function() {
     var $quality = $(this).siblings('span').children();
     var newQuality = upQualities[$quality.text()];
     $quality.text(newQuality);
+
 });
 
 var downQualities = {
@@ -144,35 +145,45 @@ $('.idea-list').keypress(function(event) {
 
 $('.search-input').on('click', function() {
   clearField($('.search-input'));
-  findIdeaByTitle();
 });
 
-function findIdeaByTitle() {
+function findIdeaByTitle(title) {
   var title = $('.search-input').val();
-    return this.storage.filter(function(idea) {
-      return idea.title === title;
+  return this.storage.filter(function(idea) {
+    return idea.title === title;
   });
-  appendIdea();
+  // $('.idea-list').append();
 }
 
 $('.search-input').keypress(function(event) {
   if (event.which === 13) {
-    // console.log($('.search-input').val());
-    findIdeaByTitle();
-    findIdeaByBody();
+    var title = $('.search-input').val();
+    findIdeaByTitle(title);
+    clearIdeas();
   }
 });
 
-function findIdeaByBody() {
-  var body = $('.search-input').val();
-  return this.storage.filter(function(idea) {
-    return idea.body === body;
-  });
+function clearIdeas() {
+  $('.idea-list').remove();
 }
 
-// function myTitle() {
-//   $('.idea-list').innerHTML = storage.find(checkTitle);
+// function findIdeaByBody() {
+//   var body = $('.search-input').val();
+//   return this.storage.filter(function(idea) {
+//     return idea.body === body;
+//   });
 // }
+
+$('.search-input').keypress(function(event) {
+  if (event.which === 13) {
+    var body = $('.search-input').val();
+    function findIdeaByBody(body) {
+      return this.storage.filter(function(idea) {
+        return idea.body === body;
+      });
+    }
+  }
+});
 
 
 function removeIdea(id) {
@@ -188,129 +199,3 @@ $('.idea-list').on('click', '.delete-btn', function() {
   removeIdea(id);
   localStorage.setItem('list', JSON.stringify(storage));
 });
-
-  // <<<<<<< HEAD
-  // $('.delete-btn').on('click', function() {
-  //   var id = $(this).parent().parent().attr('id');
-  //   $(this).parent().parent().remove();
-  //   removeIdea(id);
-  //   localStorage.setItem('list', JSON.stringify(storage));
-  // });
-  // =======
-
-
-
-
-
-
-
-
-
-//
-// var $save = $('.save-btn');
-// var $downVote = $('.down-btn');
-// var $upVote = $('.up-btn');
-// var $removeIdea = $('.delete-btn');
-// var $ideaList = $('.idea-list');
-// var $title = $('.title-input');
-// var $body = $('.body-input');
-//
-// $save.on('click', function() {
-//   ideaBox.add($title);
-// });
-//
-// var ideaBox = {
-//   ideas: [],
-//
-//   add: function () {
-//     this.ideas.push(new Idea(title));
-//     this.render();
-//   },
-//
-//   remove: function (id) {
-//     id = parseInt(id);
-//     this.ideas = this.ideas.filter(function(r) {
-//       return r.id !== id;
-//     });
-//     this.store();
-//     this.render();
-//   },
-//
-//   render: function () {
-//     $ideaList.html('')
-//       var ideas = this.ideas[i];
-//       $ideaList.append(ideas.toHTML());
-//       $save.on('click', function(event) {
-//         event.preventDefault();
-//         var title = $title.val();
-//       });
-//       this.store();
-//   },
-//
-//   find: function (id) {
-//     var foundIdea;
-//     for (i = 0; i < this.ideas.length; i++) {
-//       if (this.ideas[i].id === id) {
-//         foundIdea = this.Idea[i];
-//         break;
-//       }
-//     }
-//     return foundIdea;
-//   },
-//
-//   store: function () {
-//     localStorage.setItem('ideas', JSON.stringify(this.ideas));
-//   },
-//
-//   retrieve: function () {
-//     var retrievedIdeas = JSON.parse(localStorage.getItem('ideas'));
-//     if(retrieveIdeas) {
-//       for (i = 0; i < retrievedIdeas.length; i++) {
-//         var ideas = retrievedIdeas[i];
-//         ideas.push(newIdea(ideas.title, ideas.body, ideas.id, ideas.quality));
-//       }
-//     }
-//     this.ideas = ideas;
-//     this.render();
-//   }
-// };
-//
-//
-// function Idea(title, body, id, quality){
-//   this.title = title;
-//   this.body = body;
-//   this.id = id || Date.now();
-//   this.quality = quality || 'swill';
-// }
-//
-// Idea.prototype.upVote = function () {
-//   this.quality = this.quality ++;
-//   this.store();
-// };
-//
-// Idea.prototype.downVote = function () {
-//   this.quality = this.quality --;
-//   this.store();
-// };
-//
-// Idea.prototype.toHTML = function() {
-//   return $('$ideaList').append(`
-//       <li class="idea" id= ${ideas.id}>
-//         <div class='first-line'>
-//           <span class="title edit-title">${ideas.title}</span>
-//           <input class="delete-btn" type="image" src="./images/delete.svg"/>
-//         </div>
-//         <span class="body edit-body">${ideas.body}</span>
-//         <div class='third-line'>
-//           <input class="up-btn" type="image" src="icons/upvote.svg">
-//           <input class="down-btn" type="image" src="icons/downvote.svg">
-//           <span class="quality">quality:${ideas.quality}</span>
-//         </div>
-//       </li>
-//   `);
-// };
-//
-// $ideaList.on('click', '$removeIdea', function() {
-//   var id = $(this).parents('.idea').attr('id');
-//   ideaBox.remove(id);
-// });
