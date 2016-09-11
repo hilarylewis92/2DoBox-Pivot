@@ -55,7 +55,7 @@ function appendIdea(idea) {
         <div class='third-line'>
           <button type="button" class="up-btn"/></button>
           <button type="button" class="down-btn"/></button>
-          <span>quality:<span class="quality">${idea.quality}</span></span>
+          <span class="quality">quality:<span class="quality"> ${idea.quality}</span></span>
         </div>
       </li>
   `);
@@ -157,7 +157,6 @@ function findIdeaByTitle() {
 
 $('.search-input').keypress(function(event) {
   if (event.which === 13) {
-    // console.log($('.search-input').val());
     findIdeaByTitle();
     findIdeaByBody();
   }
