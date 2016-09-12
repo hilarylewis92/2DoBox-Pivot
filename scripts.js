@@ -8,10 +8,8 @@ $('.save-btn').on('click', function() {
   makeIdeaList($title, $body);
   clearField($('.title-input'));
   clearField($('.body-input'));
-  // downClick();
-  // upClick();
-  // edit();
 });
+
 
 function clearField(element) {
   if (element.val !== "") {
@@ -45,13 +43,13 @@ function Idea(title, body){
 }
 
 function appendIdea(idea) {
-  return $('.idea-list').append(`
+  return $('.idea-list').prepend(`
       <li class="idea" id= ${idea.id}>
         <div class='first-line'>
-          <span contenteditable class="title edit-title edit-content">${idea.title}</span>
+          <span contenteditable class="title edit-title edit-content search">${idea.title}</span>
           <button type="button" class="delete-btn"/></button>
         </div>
-        <span contenteditable class="body edit-body edit-content">${idea.body}</span>
+        <span contenteditable class="body edit-body edit-content search">${idea.body}</span>
         <div class='third-line'>
           <button type="button" class="up-btn"/></button>
           <button type="button" class="down-btn"/></button>
@@ -72,7 +70,7 @@ function changeQuality(id, newQuality, idea) {
   id = parseInt(id);
   var idea = this.findIdeaById(id);
   idea.quality = newQuality;
-  this.makeIdeaList();
+  localStorage.setItem('list', JSON.stringify(storage));
 }
 
 var upQualities = {
@@ -85,7 +83,8 @@ $('.idea-list').on('click', '.up-btn',  function() {
     var $quality = $(this).siblings('span').children();
     var newQuality = upQualities[$quality.text()];
     $quality.text(newQuality);
-
+    var id = $(this).parents('.idea').attr('id');
+    changeQuality(id, newQuality);
 });
 
 var downQualities = {
@@ -98,8 +97,8 @@ $('.idea-list').on('click', '.down-btn', function() {
     var $quality = $(this).siblings('span').children();
     var newQuality = downQualities[$quality.text()];
     $quality.text(newQuality);
-    // var id = $(this).parents('.idea').attr('id');
-    // changeQuality(id, newQuality);
+    var id = $(this).parents('.idea').attr('id');
+    changeQuality(id, newQuality);
 });
 
 function findIdeaById(id) {
@@ -143,48 +142,23 @@ $('.idea-list').keypress(function(event) {
   }
 });
 
+
+$('.search-input').on('keyup', function(event) {
+  event.preventDefault();
+  var $searchBox = $(this).val().toLowerCase();
+  var ideas = $('.idea-list').children();
+  ideas.show()
+  var nonSearchIdeas = ideas.filter(function() {
+    var allIdeas = $(this).find('.search').text();
+    var search = (allIdeas).toLowerCase();
+    return !(search.includes($searchBox));
+  });
+  nonSearchIdeas.hide();
+});
+
 $('.search-input').on('click', function() {
   clearField($('.search-input'));
 });
-
-function findIdeaByTitle(title) {
-  var title = $('.search-input').val();
-  return this.storage.filter(function(idea) {
-    return idea.title === title;
-  });
-  // $('.idea-list').append();
-}
-
-$('.search-input').keypress(function(event) {
-  if (event.which === 13) {
-    var title = $('.search-input').val();
-    findIdeaByTitle(title);
-    clearIdeas();
-  }
-});
-
-function clearIdeas() {
-  $('.idea-list').remove();
-}
-
-// function findIdeaByBody() {
-//   var body = $('.search-input').val();
-//   return this.storage.filter(function(idea) {
-//     return idea.body === body;
-//   });
-// }
-
-$('.search-input').keypress(function(event) {
-  if (event.which === 13) {
-    var body = $('.search-input').val();
-    function findIdeaByBody(body) {
-      return this.storage.filter(function(idea) {
-        return idea.body === body;
-      });
-    }
-  }
-});
-
 
 function removeIdea(id) {
     var id = parseInt(id);
