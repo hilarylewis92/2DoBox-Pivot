@@ -138,8 +138,8 @@
 
 	function editTitle(id, newTitle, idea) {
 	  id = parseInt(id);
-	  var idea2 = findIdeaById(id);
-	  idea.title = newTitle;
+	  let foundIdea = findIdeaById(id);
+	  foundIdea.title = newTitle;
 	  localStorage.setItem('list', JSON.stringify(storage));
 	}
 
