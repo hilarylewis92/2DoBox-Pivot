@@ -38,7 +38,8 @@ input {
 }
 
 .save-btn:hover {
-  background-color: #045E55
+  background-color: #045E55;
+  cursor: pointer;
 }
 
 .list {
@@ -146,7 +147,7 @@ li {
     width: 90%;
   }
 
-  .body-input {
+  .task-input {
     height: 90px;
     vertical-align: : top;
   }
