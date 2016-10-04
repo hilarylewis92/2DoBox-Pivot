@@ -46,7 +46,7 @@
 
 	const $ = __webpack_require__(1);
 
-	const storage = getLocalStorage() || [];
+	let storage = getLocalStorage() || [];
 
 	renderLocalStorageToPage();
 
@@ -132,7 +132,7 @@
 	}
 
 	function findIdeaById(id) {
-	  return this.storage.find(function(idea) {
+	  return storage.find(function(idea) {
 	    return idea.id === id;
 	  });
 	}
