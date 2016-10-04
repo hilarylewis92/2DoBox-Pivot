@@ -139,14 +139,14 @@
 
 	function editTitle(id, newTitle, idea) {
 	  id = parseInt(id);
-	  var idea = this.findIdeaById(id);
+	  var idea2 = findIdeaById(id);
 	  idea.title = newTitle;
 	  localStorage.setItem('list', JSON.stringify(storage));
 	}
 
 	function editBody(id, newBody, idea) {
 	  id = parseInt(id);
-	  idea = this.findIdeaById(id);
+	  idea = findIdeaById(id);
 	  idea.body = newBody;
 	  localStorage.setItem('list', JSON.stringify(storage));
 	}
