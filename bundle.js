@@ -232,9 +232,9 @@
 	  nonSearchIdeas.hide();
 	});
 
-	$('.search-input').on('click', function() {
-	  clearField($('.search-input'));
-	});
+	// $('.search-input').on('click', function() {
+	//   clearField($('.search-input'));
+	// });
 
 
 	$('.idea-list').on('click', '.delete-btn', function() {
