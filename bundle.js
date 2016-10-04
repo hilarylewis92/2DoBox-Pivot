@@ -57,7 +57,7 @@
 	  // clearField($('.body-input'));
 	});
 
-	$(".title-input").on("keyup", function (key) {
+	$(".title-input, .body-input").on("keyup", function (key) {
 	  if (key.which === 13) {
 	    putTasksOnPage();
 	    clearInputFields();
