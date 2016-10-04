@@ -54,10 +54,10 @@
 	  putTasksOnPage();
 	  clearInputFields();
 	  // clearField($('.title-input'));
-	  // clearField($('.body-input'));
+	  // clearField($('.task-input'));
 	});
 
-	$(".title-input, .body-input").on("keyup", function (key) {
+	$(".title-input, .task-input").on("keyup", function (key) {
 	  if (key.which === 13) {
 	    putTasksOnPage();
 	    clearInputFields();
@@ -66,7 +66,7 @@
 
 	function putTasksOnPage () {
 	  let $title = $('.title-input').val();
-	  let $body = $('.body-input').val();
+	  let $body = $('.task-input').val();
 	  makeIdeaList($title, $body);
 	}
 
@@ -74,8 +74,8 @@
 	//   clearField($('.title-input'));
 	// });
 	//
-	// $('.body-input').on('click', function() {
-	//   clearField($('.body-input'));
+	// $('.task-input').on('click', function() {
+	//   clearField($('.task-input'));
 	// });
 
 	function renderLocalStorageToPage() {
@@ -90,7 +90,7 @@
 
 	function clearInputFields () {
 	  $('.title-input').val("");
-	  $('.body-input').val("");
+	  $('.task-input').val("");
 	}
 
 	// function clearField(element) {
