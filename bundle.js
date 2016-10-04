@@ -66,8 +66,8 @@
 
 	function putTasksOnPage () {
 	  let $title = $('.title-input').val();
-	  let $body = $('.task-input').val();
-	  makeIdeaList($title, $body);
+	  let $task = $('.task-input').val();
+	  makeIdeaList($title, $task);
 	}
 
 	// $('.title-input').on('click', function() {
