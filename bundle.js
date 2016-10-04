@@ -125,8 +125,8 @@
 
 	function changeQuality(id, newQuality, idea) {
 	  id = parseInt(id);
-	  let foundIdea = findIdeaById(id);
-	  foundIdea.quality = newQuality;
+	  idea = findIdeaById(id);
+	  idea.quality = newQuality;
 	  localStorage.setItem('list', JSON.stringify(storage));
 	}
 
