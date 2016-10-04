@@ -57,6 +57,13 @@
 	  // clearField($('.body-input'));
 	});
 
+	$(".title-input").on("keyup", function (key) {
+	  if (key.which === 13) {
+	    putTasksOnPage();
+	    clearInputFields();
+	  }
+	});
+
 	function putTasksOnPage () {
 	  let $title = $('.title-input').val();
 	  let $body = $('.body-input').val();
