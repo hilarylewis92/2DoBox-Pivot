@@ -123,7 +123,7 @@
 	  appendIdea(idea);
 	}
 
-	function changeQuality(id, newQuality, idea) {
+	function changeQuality(id, newQuality, idea) { // HL: why does this take in idea as a param?
 	  id = parseInt(id);
 	  idea = findIdeaById(id);
 	  idea.quality = newQuality;
@@ -138,8 +138,8 @@
 
 	function editTitle(id, newTitle, idea) {
 	  id = parseInt(id);
-	  let foundIdea = findIdeaById(id);
-	  foundIdea.title = newTitle;
+	  idea = findIdeaById(id);
+	  idea.title = newTitle;
 	  localStorage.setItem('list', JSON.stringify(storage));
 	}
 
@@ -157,7 +157,7 @@
 	  });
 	}
 
-	var upQualities = {
+	let upQualities = {
 	    'None': 'Low',
 	    'Low': 'Normal',
 	    'Normal' : 'High',
@@ -165,14 +165,14 @@
 	};
 
 	$('.idea-list').on('click', '.up-btn',  function() {
-	    var $quality = $(this).siblings('span').children();
-	    var newQuality = upQualities[$quality.text()];
+	    let $quality = $(this).siblings('span').children();
+	    let newQuality = upQualities[$quality.text()];
 	    $quality.text(newQuality);
-	    var id = $(this).parents('.idea').attr('id');
+	    let id = $(this).parents('.idea').attr('id');
 	    changeQuality(id, newQuality);
 	});
 
-	var downQualities = {
+	let downQualities = {
 	  'Critical': 'High',
 	  'High': 'Normal',
 	  'Normal' : 'Low',
@@ -180,24 +180,24 @@
 	};
 
 	$('.idea-list').on('click', '.down-btn', function() {
-	    var $quality = $(this).siblings('span').children();
-	    var newQuality = downQualities[$quality.text()];
+	    let $quality = $(this).siblings('span').children();
+	    let newQuality = downQualities[$quality.text()];
 	    $quality.text(newQuality);
-	    var id = $(this).parents('.idea').attr('id');
+	    let id = $(this).parents('.idea').attr('id');
 	    changeQuality(id, newQuality);
 	});
 
 
 	$('.idea-list').on('focusout', '.edit-title', function() {
-	  var id = $(this).parents('.idea').attr('id');
-	  var newTitle = $(this).text();
+	  let id = $(this).parents('.idea').attr('id');
+	  let newTitle = $(this).text();
 	  editTitle(id, newTitle);
 	});
 
 
 	$('.idea-list').on('focusout', '.edit-body', function() {
-	  var id = $(this).parents('.idea').attr('id');
-	  var newBody = $(this).text();
+	  let id = $(this).parents('.idea').attr('id');
+	  let newBody = $(this).text();
 	  editBody(id, newBody);
 	});
 
@@ -212,12 +212,12 @@
 
 	$('.search-input').on('keyup', function(event) {
 	  event.preventDefault();
-	  var $searchBox = $(this).val().toLowerCase();
-	  var ideas = $('.idea-list').children();
+	  let $searchBox = $(this).val().toLowerCase();
+	  let ideas = $('.idea-list').children();
 	  ideas.show();
-	  var nonSearchIdeas = ideas.filter(function() {
-	    var allIdeas = $(this).find('.search').text();
-	    var search = (allIdeas).toLowerCase();
+	  let nonSearchIdeas = ideas.filter(function() {
+	    let allIdeas = $(this).find('.search').text();
+	    let search = (allIdeas).toLowerCase();
 	    return !(search.includes($searchBox));
 	  });
 	  nonSearchIdeas.hide();
@@ -229,7 +229,7 @@
 
 
 	$('.idea-list').on('click', '.delete-btn', function() {
-	  var id = $(this).parent().parent().attr('id');
+	  let id = $(this).parent().parent().attr('id');
 	  $(this).parent().parent().remove();
 	  removeIdea(id);
 	  localStorage.setItem('list', JSON.stringify(storage));
