@@ -99,11 +99,12 @@
 	//   }
 	// }
 
-	function Idea(title, body){
+	function Idea(title, task){
 	  this.title = title;
-	  this.body = body;
+	  this.task = task;
 	  this.id = Date.now();
 	  this.quality = 'Normal';
+	  this.completed = 'false'; //HL: to use late when we do our complete functionality
 	}
 
 	function appendIdea(idea) {
@@ -113,7 +114,7 @@
 	          <span contenteditable class="title edit-title edit-content search">${idea.title}</span>
 	          <button type="button" class="delete-btn"/></button>
 	        </div>
-	        <span contenteditable class="body edit-body edit-content search">${idea.body}</span>
+	        <span contenteditable class="task edit-task edit-content search">${idea.task}</span>
 	        <div class='third-line'>
 	          <button type="button" class="up-btn"/></button>
 	          <button type="button" class="down-btn"/></button>
@@ -123,8 +124,8 @@
 	  `);
 	}
 
-	function makeIdeaList(title, body) {
-	  let idea = new Idea(title, body);
+	function makeIdeaList(title, task) {
+	  let idea = new Idea(title, task);
 	  storage.push(idea);
 	  localStorage.setItem('list', JSON.stringify(storage));
 	  appendIdea(idea);
@@ -150,10 +151,10 @@
 	  localStorage.setItem('list', JSON.stringify(storage));
 	}
 
-	function editBody(id, newBody, idea) {
+	function editTask(id, newTask, idea) {
 	  id = parseInt(id);
 	  idea = findIdeaById(id);
-	  idea.body = newBody;
+	  idea.task = newTask;
 	  localStorage.setItem('list', JSON.stringify(storage));
 	}
 
@@ -204,10 +205,10 @@
 	});
 
 
-	$('.idea-list').on('focusout', '.edit-body', function() {
+	$('.idea-list').on('focusout', '.edit-task', function() {
 	  let id = $(this).parents('.idea').attr('id');
-	  let newBody = $(this).text();
-	  editBody(id, newBody);
+	  let newTask = $(this).text();
+	  editTask(id, newTask);
 	});
 
 	$('.idea-list').keypress(function(event) {
