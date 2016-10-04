@@ -118,7 +118,7 @@
 	        <div class='third-line'>
 	          <button type="button" class="up-btn"/></button>
 	          <button type="button" class="down-btn"/></button>
-	          <span>importance: <span class="importance">${todo.importance}</span></span>
+	          <span>Importance: <span class="importance">${todo.importance}</span></span>
 	        </div>
 	      </li>
 	  `);
