@@ -168,7 +168,8 @@
 	    'None': 'Low',
 	    'Low': 'Normal',
 	    'Normal' : 'High',
-	    'High' : 'Critical'
+	    'High' : 'Critical',
+	    'Critical' : 'Critical'
 	};
 
 	$('.idea-list').on('click', '.up-btn',  function() {
@@ -183,7 +184,8 @@
 	  'Critical': 'High',
 	  'High': 'Normal',
 	  'Normal' : 'Low',
-	  'Low' : 'None'
+	  'Low' : 'None',
+	  'None' : 'None'
 	};
 
 	$('.idea-list').on('click', '.down-btn', function() {
