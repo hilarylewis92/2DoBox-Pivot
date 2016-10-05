@@ -1,5 +1,5 @@
 const assert =  require('assert');
-require('locus')
+// require('locus')
 
 describe('attributes on our application',function(){
   it('has input forms and I can set values in those forms', function(){
@@ -15,21 +15,12 @@ describe('attributes on our application',function(){
   }); //end of set values test
 
   it("should be able to add ideas to the page", function () {
-<<<<<<< HEAD
-    browser.url('/')
-    var todoTitle = browser.element(".title-input")
-    var todoTask = browser.element(".task-input")
-
-    todoTitle.setValue('great title')
-    todoTask.setValue('great task')
-=======
     browser.url('/');
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
     todoTitle.setValue('buy milk');
     todoTask.setValue('buy milk now');
->>>>>>> 66b15435b0d6686772fbe1bf27975604872840a1
 
     browser.click(".save-btn");
 
