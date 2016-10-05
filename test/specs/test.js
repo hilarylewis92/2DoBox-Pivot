@@ -17,11 +17,9 @@ describe('attributes on our application',function(){
     browser.url('/')
     var todoTitle = browser.element(".title-input")
     var todoTask = browser.element(".task-input")
-    // var todoImportance = browser.element(".importance-rating");
 
     todoTitle.setValue('great title')
     todoTask.setValue('great task')
-    // todoImportance.setValue('High');
 
     browser.click(".save-btn");
 

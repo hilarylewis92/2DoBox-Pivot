@@ -84,10 +84,14 @@ li {
   padding-bottom: 20px;
 }
 
-.third-line {
-  /*display: inline-block;*/
+.second-line{
   padding-bottom: 20px;
 }
+
+.third-line {
+  padding-bottom: 20px;
+}
+
 .up-btn {
   background-image: url('images/upvote.svg');
   background-color: transparent;
@@ -135,6 +139,21 @@ li {
   background-image: url('images/delete-hover.svg');
   height: 30px;
   width: 30px;
+}
+
+.completed-btn {
+  background-color: #00A79D;
+  border: none;
+  color: #FFFFFF;
+  float: right;
+  height: 35px;
+  width: 180px;
+  margin: -10px;
+}
+
+.completed-btn:hover {
+  background-color: #045E55;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px){
