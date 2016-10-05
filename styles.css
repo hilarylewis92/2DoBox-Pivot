@@ -22,7 +22,8 @@ body {
 
 input {
   font-size: 25px;
-  color: rgb(200, 200, 200);
+  /*color: rgb(200, 200, 200);*/
+  color: "black";
   width: 50%;
   margin: 10px;
   outline: none;
@@ -146,8 +147,9 @@ li {
   border: none;
   color: #FFFFFF;
   float: right;
+  font-size: 20px;
   height: 35px;
-  width: 180px;
+  width: 150px;
   margin: -10px;
 }
 
