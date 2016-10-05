@@ -73,6 +73,10 @@ li {
   height: 100%;
 }
 
+.completed {
+  color: green;
+}
+
 .title {
   font-size: 30px;
   font-family: 'Roboto Slab', serif;
