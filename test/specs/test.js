@@ -1,5 +1,5 @@
 const assert =  require('assert');
-require('locus')
+// require('locus')
 
 describe('attributes on our application',function(){
   it('has input forms and I can set values in those forms', function(){
