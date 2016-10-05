@@ -45,4 +45,21 @@ describe('attributes on our application',function(){
     var importance = browser.getText('.importance-rating')
     assert.equal(importance[0], 'Importance: High')
   }); //end of upvote test
+
+  it("should decrease the importance of an idea by one when user presses downvote", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    browser.click(".down-btn");
+
+    var importance = browser.getText('.importance-rating')
+    assert.equal(importance[0], 'Importance: Low')
+  }); //end of upvote test
 }); //end of describe attributes on our application
