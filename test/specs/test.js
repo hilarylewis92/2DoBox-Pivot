@@ -61,5 +61,23 @@ describe('attributes on our application',function(){
 
     var importance = browser.getText('.importance-rating')
     assert.equal(importance[0], 'Importance: Low')
-  }); //end of upvote test
+  }); //end of downvote test
+
+  it("should remove an item when remove button is clicked", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    assert.equal(browser.getText("li").length, 4);
+
+    browser.click(".delete-btn");
+    // console.log(browser.getText("li"));
+    assert.equal(browser.getText("li").length, 3);
+  }); //end of remove test
 }); //end of describe attributes on our application
