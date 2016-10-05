@@ -1,4 +1,5 @@
 const assert =  require('assert');
+require('locus')
 
 describe('attributes on our application',function(){
   it('has input forms and I can set values in those forms', function(){
@@ -31,7 +32,17 @@ describe('attributes on our application',function(){
   it("should augment the importance of an idea by one when user presses upvote", function () {
     browser.url('/');
 
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
     browser.click(".save-btn");
 
+    browser.click(".up-btn");
+
+    var importance = browser.getText('.importance-rating')
+    assert.equal(importance[0], 'Importance: High')
   }); //end of upvote test
 }); //end of describe attributes on our application
