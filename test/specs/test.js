@@ -73,11 +73,11 @@ describe('attributes on our application',function(){
     todoTask.setValue('buy milk now');
 
     browser.click(".save-btn");
-
-    assert.equal(browser.getText("li").length, 4);
+    var itemLengths = browser.getText("li").length
+    assert.equal(browser.getText("li").length, itemLengths);
 
     browser.click(".delete-btn");
     // console.log(browser.getText("li"));
-    assert.equal(browser.getText("li").length, 3);
+    assert.equal(browser.getText("li").length, itemLengths-1);
   }); //end of remove test
 }); //end of describe attributes on our application
