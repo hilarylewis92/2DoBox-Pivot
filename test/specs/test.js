@@ -45,4 +45,57 @@ describe('attributes on our application',function(){
     var importance = browser.getText('.importance-rating')
     assert.equal(importance[0], 'Importance: High')
   }); //end of upvote test
+
+  it("should decrease the importance of an idea by one when user presses downvote", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    browser.click(".down-btn");
+
+    var importance = browser.getText('.importance-rating')
+    assert.equal(importance[0], 'Importance: Low')
+  }); //end of downvote test
+
+  it("should remove an item when remove button is clicked", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+    var itemLengths = browser.getText("li").length
+    assert.equal(browser.getText("li").length, itemLengths);
+
+    browser.click(".delete-btn");
+    assert.equal(browser.getText("li").length, itemLengths-1);
+  }); //end of remove test
+
+  it("should search for a specific item", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    browser.keyup(".search-input");
+
+    //search-input.val()===todo.val()
+    assert.equal(browser.getText('li'), )
+
+  }); //end of search test
+
 }); //end of describe attributes on our application
