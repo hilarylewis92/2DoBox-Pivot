@@ -77,7 +77,25 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText("li").length, itemLengths);
 
     browser.click(".delete-btn");
-    // console.log(browser.getText("li"));
     assert.equal(browser.getText("li").length, itemLengths-1);
   }); //end of remove test
+
+  it("should search for a specific item", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    browser.keyup(".search-input");
+
+    //search-input.val()===todo.val()
+    assert.equal(browser.getText('li'), )
+
+  }); //end of search test
+
 }); //end of describe attributes on our application
