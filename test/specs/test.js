@@ -11,10 +11,10 @@ describe('attributes on our application',function(){
 
     assert.equal(todoTitle.getValue(), 'buy milk');
     assert.equal(todoTask.getValue(), 'buy milk now');
-  }); //end of set values tuest
+  }); //end of set values test
 
   it("should be able to add ideas to the page", function () {
-    browser.url('/')
+    browser.url('/');
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
@@ -28,11 +28,10 @@ describe('attributes on our application',function(){
      assert.equal(allTodos.replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal')
   }); //end of add ideas test
 
-  // it("should augment the importance of an idea by one when user presses upvote", function () {
-  //
-  //     var todo = new Todo("Buy milk", "buy milk now");
-  //
-  //
-  //
-  // }); //end of upvote test
-})
+  it("should augment the importance of an idea by one when user presses upvote", function () {
+    browser.url('/');
+
+    browser.click(".save-btn");
+
+  }); //end of upvote test
+}); //end of describe attributes on our application
