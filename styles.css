@@ -73,8 +73,19 @@ li {
   height: 100%;
 }
 
-.completed {
-  color: green;
+.completed .first-line{
+  text-decoration: line-through;
+  color: red;
+}
+
+.completed .importance-rating{
+  text-decoration: line-through;
+  color: red;
+}
+
+.completed .task{
+  text-decoration: line-through;
+  color: red;
 }
 
 .title {
