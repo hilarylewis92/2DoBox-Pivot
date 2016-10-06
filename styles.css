@@ -28,6 +28,25 @@ input {
   outline: none;
 }
 
+button {
+  color: #FFFFFF;
+  background-color: #00A79D;
+  border: none;
+  font-size: 20px;
+  color: "black";
+  width: 7%;
+  margin: 10px;
+  outline: none;
+}
+button:hover {
+  background-color: #045E55;
+  cursor: pointer;
+}
+
+.show-more-todos{
+  width: 15%;
+}
+
 .save-btn {
   color: #FFFFFF;
   background-color: #00A79D;
@@ -55,7 +74,7 @@ input {
 }
 
 .list {
-  height: 1000px;
+  height: 100%;
   padding: 30px;
 }
 
@@ -174,15 +193,15 @@ li {
   color: #FFFFFF;
   float: right;
   font-size: 20px;
-  height: 35px;
-  width: 150px;
-  margin: -10px;
+  height: 100%;
+  width: 25%;
 }
 
 .completed-btn:hover {
   background-color: #045E55;
   cursor: pointer;
 }
+
 
 @media screen and (max-width: 600px){
   .hero {
