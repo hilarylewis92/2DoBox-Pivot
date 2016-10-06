@@ -1,4 +1,5 @@
 const assert =  require('assert');
+const $ = require('jquery');
 // require('locus')
 
 describe('attributes on our application',function(){
@@ -101,5 +102,19 @@ describe('attributes on our application',function(){
   //
   //
   // }); //end of search test
+
+  it("should count the characters entered by the user", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+    var text = browser.element(".char-count-output");
+
+    todoTitle.setValue('cats');
+
+    assert.equal(browser.getText(".char-count-output"), "There are 4 characters in this input field. (Max allowed: 120)");
+  }); //end of char count test
+
+  // $(".char-count-output").text("There are " + field.length + " " + "characters in this input field. (Max allowed: 120)");
 
 }); //end of describe attributes on our application
