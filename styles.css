@@ -39,7 +39,12 @@ button {
   outline: none;
 }
 button:hover {
+  background-color: #045E55;
+  cursor: pointer;
+}
 
+.show-more-todos{
+  width: 15%;
 }
 
 .save-btn {
@@ -69,7 +74,7 @@ button:hover {
 }
 
 .list {
-  height: 1000px;
+  height: 100%;
   padding: 30px;
 }
 
@@ -188,9 +193,8 @@ li {
   color: #FFFFFF;
   float: right;
   font-size: 20px;
-  height: 35px;
-  width: 150px;
-  margin: -10px;
+  height: 100%;
+  width: 25%;
 }
 
 .completed-btn:hover {
