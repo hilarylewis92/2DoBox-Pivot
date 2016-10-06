@@ -202,6 +202,7 @@ li {
   cursor: pointer;
 }
 
+
 @media screen and (max-width: 600px){
   .hero {
     height: 300px;
