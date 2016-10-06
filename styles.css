@@ -28,6 +28,20 @@ input {
   outline: none;
 }
 
+button {
+  color: #FFFFFF;
+  background-color: #00A79D;
+  border: none;
+  font-size: 20px;
+  color: "black";
+  width: 7%;
+  margin: 10px;
+  outline: none;
+}
+button:hover {
+
+}
+
 .save-btn {
   color: #FFFFFF;
   background-color: #00A79D;
