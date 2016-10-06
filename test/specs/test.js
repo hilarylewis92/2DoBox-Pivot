@@ -81,27 +81,27 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText("li").length, itemLengths-1);
   }); //end of remove test
 
-  // it("should return searched item when user types into search box", function () {
-  //   browser.url('/');
-  //
-  //   var todoTitle = browser.element(".title-input");
-  //   var todoTask = browser.element(".task-input");
-  //   var search = browser.element(".search-input");
-  //
-  //   todoTitle.setValue('buy milk');
-  //   todoTask.setValue('buy milk now');
-  //   search.setValue("milk");
-  //
-  //   // browser.click(".save-btn");
-  //
-  //   assert.strictEqual("dogs", "cats");
-  //
-  //   //user types "ilk" into search field
-  //
-  //   //title and body in the first item on page must only contain "ilk" (nothing else)
-  //
-  //
-  // }); //end of search test
+  it.skip("should return searched item when user types into search box", function () { //doesn't work; need to come back to it
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+    var search = browser.element(".search-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+    search.setValue("milk");
+
+    // browser.click(".save-btn");
+
+    assert.strictEqual("dogs", "cats");
+
+    //user types "ilk" into search field
+
+    //title and body in the first item on page must only contain "ilk" (nothing else)
+
+
+  }); //end of search test
 
   it("should count the characters entered by the user", function () {
     browser.url('/');
@@ -115,6 +115,103 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".char-count-output"), "There are 4 characters in this input field. (Max allowed: 120)");
   }); //end of char count test
 
-  // $(".char-count-output").text("There are " + field.length + " " + "characters in this input field. (Max allowed: 120)");
+  it("should only allow ten items on the page when page is refreshed", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    assert.equal();
+  }); //end of remove test
 
 }); //end of describe attributes on our application
