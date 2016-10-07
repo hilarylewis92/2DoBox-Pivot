@@ -115,14 +115,17 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".char-count-output"), "There are 4 characters in this input field. (Max allowed: 120)");
   }); //end of char count test
 
-  it("should only allow ten items on the page when page is refreshed", function () {
+  it.skip("should only allow ten items on the page when page is refreshed", function () {
     browser.url('/');
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
-    var toDoList = browser.element(".todo-list");
-    toDoList.setValue("");
+    // var toDoList = browser.element(".todo-list");
+    // toDoList.setValue("");
+
+    // var deleteButtton = browser.element(".delete-btn");
+    // browser.click(browser.element(".delete-btn"));
 
     todoTitle.setValue('buy milk');
     todoTask.setValue('buy milk now');
