@@ -41,8 +41,7 @@ describe('attributes on our application',function(){
     todoTask.setValue('buy milk now');
 
     browser.click(".save-btn");
-    assert.equal(browser.getText(todoTitle, ""));
-
+    assert.equal(todoTitle.getValue(), "");
 
   }); //end of clear items
 
