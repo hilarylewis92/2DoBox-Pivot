@@ -1,3 +1,4 @@
+//feature tests
 const assert =  require('assert');
 const $ = require('jquery');
 // require('locus')
@@ -115,7 +116,7 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".char-count-output"), "There are 4 characters in this input field. (Max allowed: 120)");
   }); //end of char count test
 
-  it("should only allow ten items on the page when page is refreshed", function () {
+  it.skip("should only allow ten items on the page when page is refreshed", function () {
     browser.url('/');
 
     var todoTitle = browser.element(".title-input");
@@ -211,7 +212,9 @@ describe('attributes on our application',function(){
 
     browser.click(".save-btn");
 
-    assert.equal();
+    assert.equal(); /// ???
   }); //end of remove test
+
+  it();
 
 }); //end of describe attributes on our application
