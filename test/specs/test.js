@@ -82,7 +82,7 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText("li").length, itemLengths-1);
   }); //end of remove test
 
-  it.skip("should return searched item when user types into search box", function () { //doesn't work; need to come back to it
+  it.skip("should not return an item not matching text in title or task fields when user types into search box", function () { //still does not work
     browser.url('/');
 
     var todoTitle = browser.element(".title-input");
@@ -91,15 +91,14 @@ describe('attributes on our application',function(){
 
     todoTitle.setValue('buy milk');
     todoTask.setValue('buy milk now');
-    search.setValue("milk");
 
-    // browser.click(".save-btn");
+    browser.click(".save-btn");
 
-    assert.strictEqual("dogs", "cats");
+    search.setValue("z");
 
-    //user types "ilk" into search field
+    var found = ('.todo-list').getValue;
 
-    //title and body in the first item on page must only contain "ilk" (nothing else)
+    assert.notMatch(found, /^z/, 'regexp does not match');
 
 
   }); //end of search test
@@ -116,16 +115,14 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".char-count-output"), "There are 4 characters in this input field. (Max allowed: 120)");
   }); //end of char count test
 
-  it.skip("should only allow ten items on the page when page is refreshed", function () {
+  it("should only allow ten items on the page when page is refreshed", function () {
     browser.url('/');
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
-    todoTitle.setValue('buy milk');
-    todoTask.setValue('buy milk now');
-
-    browser.click(".save-btn");
+    var toDoList = browser.element(".todo-list");
+    toDoList.setValue("");
 
     todoTitle.setValue('buy milk');
     todoTask.setValue('buy milk now');
@@ -212,7 +209,14 @@ describe('attributes on our application',function(){
 
     browser.click(".save-btn");
 
-    assert.equal(); /// ???
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now'); //18 tasks entered total
+
+    browser.click(".save-btn");
+
+    browser.reload();
+
+    assert.equal(browser.getText(".todo-count-output"), "There are 10 tasks on the page.");
   }); //end of remove test
 
   it("should not allow more than 120 characters in either input field", function () {
@@ -220,7 +224,7 @@ describe('attributes on our application',function(){
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
-    todoTitle.setValue('garbage gabitron gabitron bluecifer gusto milkman suhdude blakement garbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakement'); //total: 271 words
+    todoTitle.setValue('garbage gabitron gabitron bluecifer gusto milkman suhdude blakement garbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron bluecifer gusto milkman suhdude blakementgarbage gabitron gabitron '); //total: 158 words
     todoTask.setValue('buy milk now');
 
     assert.equal(browser.getText(".char-count-output"), "Error: cannot submit TODOs that are more than 120 characters.");
