@@ -31,6 +31,21 @@ describe('attributes on our application',function(){
      assert.equal(allTodos.replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal')
   }); //end of add ideas test
 
+  it("should clear items from input fields when the user presses save", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+    assert.equal(browser.getText(todoTitle, ""));
+
+
+  }); //end of clear items
+
   it("should augment the importance of an idea by one when user presses upvote", function () {
     browser.url('/');
 
@@ -79,10 +94,10 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText("li").length, itemLengths);
 
     browser.click(".delete-btn");
-    assert.equal(browser.getText("li").length, itemLengths-1);
+    assert.equal(browser.getText("li").length, itemLengths - 1);
   }); //end of remove test
 
-  it.skip("should not return an item not matching text in title or task fields when user types into search box", function () { //not passing 
+  it.skip("should not return an item not matching text in title or task fields when user types into search box", function () { //not passing
     browser.url('/');
 
     var todoTitle = browser.element(".title-input");
