@@ -248,12 +248,15 @@ describe('attributes on our application',function(){
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
     browser.click(".edit-title");
     todoTitle.setValue('this is not a good task');
-    browser.keys("\uE007");
+    browser.keys("\uE007"); //the enter key
 
-    assert.equal(todoTitle.getValue(), 'this is not a good task');
+    assert.equal(browser.getText(".edit-title")[0], 'this is not a good task');
 
-  });
+  }); //end of edit title and body
 
 }); //end of describe attributes on our application
