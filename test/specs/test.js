@@ -244,4 +244,16 @@ describe('attributes on our application',function(){
 
   }); //end of 120 chars
 
+  it("should allow the user to edit title and task/body fields by clicking and typing in their changes", function () {
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    browser.click(".edit-title");
+    todoTitle.setValue('this is not a good task');
+    browser.keys("\uE007");
+
+    assert.equal(todoTitle.getValue(), 'this is not a good task');
+
+  });
+
 }); //end of describe attributes on our application
