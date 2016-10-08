@@ -277,7 +277,8 @@ describe('attributes on our application',function(){
 
   }); //end of 120 chars
 
-  it("should allow the user to edit title and task/body fields by clicking and typing in their changes", function () {
+  it("should allow the user to edit title and task/body fields by clicking and typing in their changes; the changes should persist upon page reload", function () {
+    browser.url('/');
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
@@ -285,11 +286,30 @@ describe('attributes on our application',function(){
     todoTask.setValue('buy milk now');
 
     browser.click(".edit-title");
-    todoTitle.setValue('this is not a good task');
+    browser.keys("\uE00D");
+    browser.keys('and get some chocolate bars too.');
     browser.keys("\uE007"); //the enter key
 
-    assert.equal(browser.getText(".edit-title")[0], 'this is not a good task');
+    browser.url('/');
+
+    assert.equal(browser.getText(".edit-title")[0], 'buy milk and get some chocolate bars too.');
 
   }); //end of edit title and body
+
+  // it("should persist the edited title and task/body fields from the above test upon page reload", function () {
+  //   var todoTitle = browser.element(".title-input");
+  //   var todoTask = browser.element(".task-input");
+  //
+  //   todoTitle.setValue('buy milk');
+  //   todoTask.setValue('buy milk now');
+  //
+  //   browser.click(".edit-title");
+  //   todoTitle.setValue('this is not a good task');
+  //   browser.keys("\uE007"); //the enter key
+  //
+  //   browser.url('/');
+  //
+  //   assert.equal(browser.getText(".edit-title")[0], 'this is not a good task');
+  // }); //end of persist edit title and body
 
 }); //end of describe attributes on our application
