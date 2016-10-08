@@ -17,4 +17,11 @@ describe("Todo constructor", function () {
 
   }); //end of pass in title and task name
 
+  it("should assign a default importance of normal", function () {
+
+    var dogs = new Todo("buy dog food", "make it a good brand");
+
+    assert.equal(dogs.importance, "Normal");
+  }); //end of importance
+
 }); //end of Todo constructor
