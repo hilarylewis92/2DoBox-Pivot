@@ -441,4 +441,30 @@ describe('attributes on our application',function(){
 
   }); //end of show more todos
 
+  it("should filter ideas by importance when user clicks the relevant filter button", function () {
+    browser.url('/');
+
+    browser.click(".delete-all-todos");
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('high priority task');
+    todoTask.setValue('high priority task');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('normal priority task');
+    todoTask.setValue('normal priority task');
+
+    browser.click(".save-btn");
+
+    browser.click(".up-btn");
+
+    browser.click(".high-btn");
+
+    var importance = browser.getText('.importance-rating')
+    assert.equal(importance, 'Importance: High')
+  }); //end of filter by importance
+
 }); //end of describe attributes on our application
