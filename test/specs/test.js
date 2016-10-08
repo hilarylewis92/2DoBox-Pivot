@@ -1,7 +1,7 @@
 //feature tests
-const assert =  require('assert');
+const assert = require('chai').assert;
 const $ = require('jquery');
-require('locus');
+// require('locus');
 
 describe('attributes on our application',function(){
   it('has input forms and I can set values in those forms', function(){
@@ -131,7 +131,7 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText("li").length, itemLengths - 1);
   }); //end of persist deletion
 
-  it.skip("should not return an item not matching text in title or task fields when user types into search box", function () { //not passing
+  it("should not return an item not matching text in title or task fields when user types into search box", function () { //not passing
     browser.url('/');
 
     var todoTitle = browser.element(".title-input");
@@ -148,7 +148,6 @@ describe('attributes on our application',function(){
     var found = ('.todo-list').getValue;
 
     assert.notMatch(found, /^z/, 'regexp does not match');
-
 
   }); //end of search test
 
@@ -286,7 +285,7 @@ describe('attributes on our application',function(){
     todoTask.setValue('buy milk now');
 
     browser.click(".edit-title");
-    browser.keys("\uE00D");
+    browser.keys("\uE00D"); //spacebar
     browser.keys('and get some chocolate bars too.');
     browser.keys("\uE007"); //the enter key
 
@@ -295,21 +294,5 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".edit-title")[0], 'buy milk and get some chocolate bars too.');
 
   }); //end of edit title and body
-
-  // it("should persist the edited title and task/body fields from the above test upon page reload", function () {
-  //   var todoTitle = browser.element(".title-input");
-  //   var todoTask = browser.element(".task-input");
-  //
-  //   todoTitle.setValue('buy milk');
-  //   todoTask.setValue('buy milk now');
-  //
-  //   browser.click(".edit-title");
-  //   todoTitle.setValue('this is not a good task');
-  //   browser.keys("\uE007"); //the enter key
-  //
-  //   browser.url('/');
-  //
-  //   assert.equal(browser.getText(".edit-title")[0], 'this is not a good task');
-  // }); //end of persist edit title and body
 
 }); //end of describe attributes on our application
