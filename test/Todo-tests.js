@@ -32,4 +32,10 @@ describe("Todo constructor", function () {
 
   }); //end of default complete value
 
+  it("should have an id", function () {
+    var dogs = new Todo("buy dog food", "make it a good brand");
+
+    assert.notEqual(dogs.id, undefined);
+  }); //end of have an id
+  
 }); //end of Todo constructor
