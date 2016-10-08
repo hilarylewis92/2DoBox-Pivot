@@ -295,4 +295,23 @@ describe('attributes on our application',function(){
 
   }); //end of edit title and body
 
+  it("should hide completed tasks on page reload", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('completed task');
+    todoTask.setValue('completed task body');
+
+    browser.click(".save-btn");
+
+    browser.click(".completed-btn");
+
+    browser.url('/');
+
+    assert.notEqual(browser.getText(".edit-title")[0], 'completed task');
+
+  }); //end of hide completed tasks
+
 }); //end of describe attributes on our application
