@@ -14,3 +14,10 @@ describe("showTenTodos", function () {
     assert.isFunction(pageManager.showTenTodos);
   });
 }); //end of showTenTodos test
+
+describe("PageManager constructor", function () {
+  it("should have a storage property", function () {
+    var page = new PageManager();
+    assert.notEqual(page.storage, undefined);
+  }); //end of...
+}); //end of describe...
