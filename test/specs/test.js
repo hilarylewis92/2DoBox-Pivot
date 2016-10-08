@@ -28,7 +28,7 @@ describe('attributes on our application',function(){
 
     var allTodos = browser.getText("li");
 
-     assert.equal(allTodos.replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal')
+     assert.equal(allTodos.replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal');
   }); //end of add ideas test
 
   it("should persist data after reload", function () {
@@ -337,6 +337,8 @@ describe('attributes on our application',function(){
 
   it("should add more todos to the page when the user clicks the 'Show More Todos' button", function () {
     browser.url('/');
+
+    browser.click(".delete-all-todos");
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
