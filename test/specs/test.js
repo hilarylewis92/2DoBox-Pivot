@@ -340,6 +340,10 @@ describe('attributes on our application',function(){
 
     browser.click(".delete-all-todos");
 
+    if (browser.alertText()) {
+        browser.alertAccept();
+    }
+
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
@@ -446,6 +450,10 @@ describe('attributes on our application',function(){
 
     browser.click(".delete-all-todos");
 
+    if (browser.alertText()) {
+        browser.alertAccept();
+    }
+
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
@@ -480,6 +488,10 @@ describe('attributes on our application',function(){
     browser.click(".save-btn");
 
     browser.click(".delete-all-todos");
+
+    if (browser.alertText()) {
+        browser.alertAccept();
+    }
 
     assert.equal(browser.element("li").length, undefined)
   }); //end of delete all tasks
