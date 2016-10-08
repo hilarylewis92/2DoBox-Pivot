@@ -505,7 +505,33 @@ describe('attributes on our application',function(){
 
     deleteAllTodos();
 
-    assert.equal(browser.element("li").length, undefined)
+    assert.equal(browser.element("li").length, undefined);
   }); //end of delete all tasks
+
+  it("should disable save button if user does not have valid text in both title and task input fields", function () {
+
+    browser.url('/');
+
+    function deleteAllTodos() {
+      browser.click(".delete-all-todos");
+
+      if (browser.alertText()) {
+        browser.alertAccept();
+      }
+    }
+
+    deleteAllTodos();
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('');
+
+    browser.click(".save-btn");
+
+    assert.equal(browser.element("li").length, undefined);
+
+  }); //end of disable save button
 
 }); //end of describe attributes on our application
