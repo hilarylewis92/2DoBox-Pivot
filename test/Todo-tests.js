@@ -24,4 +24,12 @@ describe("Todo constructor", function () {
     assert.equal(dogs.importance, "Normal");
   }); //end of importance
 
+  it("should assign a default completed value of false", function () {
+
+    var dogs = new Todo("buy dog food", "make it a good brand");
+
+    assert.equal(dogs.completed, false);
+
+  }); //end of default complete value
+
 }); //end of Todo constructor
