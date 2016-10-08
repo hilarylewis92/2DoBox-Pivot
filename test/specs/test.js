@@ -338,11 +338,15 @@ describe('attributes on our application',function(){
   it("should add more todos to the page when the user clicks the 'Show More Todos' button", function () {
     browser.url('/');
 
-    browser.click(".delete-all-todos");
+    function deleteAllTodos() {
+      browser.click(".delete-all-todos");
 
-    if (browser.alertText()) {
+      if (browser.alertText()) {
         browser.alertAccept();
+      }
     }
+
+    deleteAllTodos();
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
