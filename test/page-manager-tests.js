@@ -1,5 +1,6 @@
 const PageManager = require('../lib/page-manager.js');
 const assert = require('chai').assert;
+const $ = require('jquery');
 
 let pageManager = new PageManager();
 
