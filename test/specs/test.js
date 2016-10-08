@@ -163,7 +163,7 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".char-count-output"), "There are 4 characters in this input field. (Max allowed: 120)");
   }); //end of char count test
 
-  it("should only allow ten items on the page when page is refreshed", function () { //not passing
+  it("should only allow ten items on the page when page is refreshed", function () {
     browser.url('/');
 
     var todoTitle = browser.element(".title-input");
@@ -334,5 +334,109 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".edit-title")[0], 'completed task 1');
 
   }); //end of re-show completed tasks
+
+  it("should add more todos to the page when the user clicks the 'Show More Todos' button", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now'); //18 tasks entered total
+
+    browser.click(".save-btn");
+
+    browser.url('/');
+
+    browser.click(".show-more-todos");
+
+    assert.equal(browser.getText(".todo-count-output"), "There are 18 tasks on the page.");
+
+  }); //end of show more todos
 
 }); //end of describe attributes on our application
