@@ -467,4 +467,21 @@ describe('attributes on our application',function(){
     assert.equal(importance, 'Importance: High')
   }); //end of filter by importance
 
+  it("should delete all tasks from the page when user clicks delete button", function () {
+
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk');
+
+    browser.click(".save-btn");
+
+    browser.click(".delete-all-todos");
+
+    assert.equal(browser.element("li").length, undefined)
+  }); //end of delete all tasks
+
 }); //end of describe attributes on our application
