@@ -452,11 +452,15 @@ describe('attributes on our application',function(){
   it("should filter ideas by importance when user clicks the relevant filter button", function () {
     browser.url('/');
 
-    browser.click(".delete-all-todos");
+    function deleteAllTodos() {
+      browser.click(".delete-all-todos");
 
-    if (browser.alertText()) {
+      if (browser.alertText()) {
         browser.alertAccept();
+      }
     }
+
+    deleteAllTodos();
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
@@ -491,11 +495,15 @@ describe('attributes on our application',function(){
 
     browser.click(".save-btn");
 
-    browser.click(".delete-all-todos");
+    function deleteAllTodos() {
+      browser.click(".delete-all-todos");
 
-    if (browser.alertText()) {
+      if (browser.alertText()) {
         browser.alertAccept();
+      }
     }
+
+    deleteAllTodos();
 
     assert.equal(browser.element("li").length, undefined)
   }); //end of delete all tasks
