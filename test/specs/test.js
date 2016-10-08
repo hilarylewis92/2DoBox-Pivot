@@ -314,4 +314,25 @@ describe('attributes on our application',function(){
 
   }); //end of hide completed tasks
 
+  it("should re-show completed tasks when user presses 'show more todos' button", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('completed task 1');
+    todoTask.setValue('completed task body 1');
+
+    browser.click(".save-btn");
+
+    browser.click(".completed-btn");
+
+    browser.url('/');
+
+    browser.click(".show-completed-btn");
+
+    assert.equal(browser.getText(".edit-title")[0], 'completed task 1');
+
+  }); //end of re-show completed tasks
+
 }); //end of describe attributes on our application
