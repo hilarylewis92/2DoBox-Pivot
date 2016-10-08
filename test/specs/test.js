@@ -113,6 +113,24 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText("li").length, itemLengths - 1);
   }); //end of remove test
 
+  it("should persist deletion of an item after page reload", function () {
+    browser.url('/');
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+    var itemLengths = browser.getText("li").length
+    assert.equal(browser.getText("li").length, itemLengths);
+
+    browser.click(".delete-btn");
+    browser.url('/');
+    assert.equal(browser.getText("li").length, itemLengths - 1);
+  }); //end of persist deletion
+
   it.skip("should not return an item not matching text in title or task fields when user types into search box", function () { //not passing
     browser.url('/');
 
