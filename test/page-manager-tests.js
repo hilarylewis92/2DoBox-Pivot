@@ -19,5 +19,10 @@ describe("PageManager constructor", function () {
   it("should have a storage property", function () {
     var page = new PageManager();
     assert.notEqual(page.storage, undefined);
-  }); //end of...
-}); //end of describe...
+  }); //end of storage property
+  it("should have a method called upvote", function () {
+    var page = new PageManager();
+    assert.isFunction(page.upvote);
+  }); //end of have a method called upvote
+
+}); //end of describe PageManager constructor
