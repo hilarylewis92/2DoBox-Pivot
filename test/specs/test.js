@@ -1,7 +1,7 @@
 //feature tests
 const assert =  require('assert');
 const $ = require('jquery');
-// require('locus')
+require('locus');
 
 describe('attributes on our application',function(){
   it('has input forms and I can set values in those forms', function(){
@@ -30,6 +30,23 @@ describe('attributes on our application',function(){
 
      assert.equal(allTodos.replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal')
   }); //end of add ideas test
+
+  it("should persist data after reload", function () {
+    browser.url('/');
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('buy milk');
+    todoTask.setValue('buy milk now');
+
+    browser.click(".save-btn");
+
+    browser.url('/');
+
+    var allTodos = browser.getText("li");
+
+     assert.equal(allTodos[0], 'buy milk, buy milk now, Importance: Normal')
+  }); //end of persist data
 
   it("should clear items from input fields when the user presses save", function () {
     browser.url('/');
@@ -230,7 +247,7 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".todo-count-output"), "There are 10 tasks on the page.");
   }); //end of remove test
 
-  it.skip("should not allow more than 120 characters in either input field", function () { //test passes, but it takes a long time to run
+  it("should not allow more than 120 characters in either input field", function () { //test passes, but it takes a long time to run
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
