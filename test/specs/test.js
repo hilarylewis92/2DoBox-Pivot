@@ -129,10 +129,8 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".char-count-output"), "There are 4 characters in this input field. (Max allowed: 120)");
   }); //end of char count test
 
-  it.skip("should only allow ten items on the page when page is refreshed", function () { //not passing
+  it("should only allow ten items on the page when page is refreshed", function () { //not passing
     browser.url('/');
-
-    driver.navigate().refresh();
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
@@ -227,7 +225,7 @@ describe('attributes on our application',function(){
 
     browser.click(".save-btn");
 
-    // browser.reload();
+    browser.url('/');
 
     assert.equal(browser.getText(".todo-count-output"), "There are 10 tasks on the page.");
   }); //end of remove test
