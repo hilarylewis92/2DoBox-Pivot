@@ -264,7 +264,9 @@ describe('attributes on our application',function(){
     assert.equal(browser.getText(".todo-count-output"), "There are 10 tasks on the page.");
   }); //end of remove test
 
-  it("should not allow more than 120 characters in either input field", function () { //test passes, but it takes a long time to run
+  it("should not allow more than 120 characters in either input field", function () {
+
+    browser.url('/');
 
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
@@ -273,6 +275,10 @@ describe('attributes on our application',function(){
     todoTask.setValue('buy milk now');
 
     assert.equal(browser.getText(".char-count-output"), "Error: cannot submit TODOs that are more than 120 characters.");
+
+    browser.click(".save-btn");
+
+    assert.equal(browser.element("li").length, undefined);
 
   }); //end of 120 chars
 
