@@ -21,9 +21,15 @@ describe("PageManager constructor", function () {
     var page = new PageManager();
     assert.notEqual(page.storage, undefined);
   }); //end of storage property
+
   it("should have a method called upvote", function () {
     var page = new PageManager();
     assert.isFunction(page.upvote);
   }); //end of have a method called upvote
+
+  it("should renderLocalStorageToPage", function () {
+    var page = new PageManager();
+    assert.isFunction(page.renderLocalStorageToPage);
+  }); //end of renderLocalStorageToPage
 
 }); //end of describe PageManager constructor
