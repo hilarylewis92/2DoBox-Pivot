@@ -206,6 +206,10 @@ li {
   cursor: pointer;
 }
 
+.todo-count-output {
+  color: white;
+}
+
 
 @media screen and (max-width: 600px){
   .hero {

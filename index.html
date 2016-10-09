@@ -18,16 +18,18 @@
 
     <div class="list">
       <h4 class="char-count-output"></h4>
-      <!-- <h5 class="todo-count-output"></h5> -->
+      <h5 class="todo-count-output"></h5>
       <input class="search-input" type="text" placeholder="search TODOS">
       <input class="show-completed-btn" type="button" value="show completed TODOs">
       <br>
       Filter by:
-      <button type="button" class="critical-btn">Critical</button>
-      <button type="button" class="high-btn">High</button>
-      <button type="button" class="normal-btn">Normal</button>
-      <button type="button" class="low-btn">Low</button>
-      <button type="button" class="none-btn">None</button>
+      <button type="button" class="critical-btn"aria-label=“critical-btn” aria-label=“remove-filters-btn”>Critical</button>
+      <button type="button" class="high-btn" aria-label=“high-btn”>High</button>
+      <button type="button" class="normal-btn" aria-label=“normal-btn”>Normal</button>
+      <button type="button" class="low-btn" aria-label=“low-btn”>Low</button>
+      <button type="button" class="none-btn" aria-label=“none-btn”>None</button>
+      <button type="button" class="remove-filters-btn" aria-label=“remove-filters-btn”>Remove Filters</button>
+      <button class="delete-all-todos" type="button">Delete ALL Todos</button>
       <ul class= "todo-list"></ul>
     </div>
 
