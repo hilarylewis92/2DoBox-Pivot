@@ -521,7 +521,7 @@ describe('attributes on our application',function(){
 
     browser.click(".remove-filters-btn");
 
-    var importance = browser.getText('.importance-rating')[1]
+    var importance = browser.getText('.importance-rating')[1];
     assert.equal(importance, 'Importance: Normal')
   }); //end of remove filters
 
