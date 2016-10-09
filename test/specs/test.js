@@ -489,6 +489,42 @@ describe('attributes on our application',function(){
     assert.equal(importance, 'Importance: High')
   }); //end of filter by importance
 
+  it("should remove the filter by importance when user clicks the remove filters button", function () {
+    browser.url('/');
+
+    function deleteAllTodos() {
+      browser.click(".delete-all-todos");
+
+      if (browser.alertText()) {
+        browser.alertAccept();
+      }
+    }
+
+    deleteAllTodos();
+
+    var todoTitle = browser.element(".title-input");
+    var todoTask = browser.element(".task-input");
+
+    todoTitle.setValue('high priority task');
+    todoTask.setValue('high priority task');
+
+    browser.click(".save-btn");
+
+    todoTitle.setValue('normal priority task');
+    todoTask.setValue('normal priority task');
+
+    browser.click(".save-btn");
+
+    browser.click(".up-btn");
+
+    browser.click(".high-btn");
+
+    browser.click(".remove-filters-btn");
+
+    var importance = browser.getText('.importance-rating')[1]
+    assert.equal(importance, 'Importance: Normal')
+  }); //end of remove filters
+
   it("should delete all tasks from the page when user clicks delete button", function () {
 
     browser.url('/');
