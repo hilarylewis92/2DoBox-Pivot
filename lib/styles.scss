@@ -161,9 +161,13 @@ button {
       font-size: $page-text-size;
       color: $page-text-color;
       text-align: left;
-      border-bottom: $border-bottom;
-      padding: $main-padding;
       width: $input-width;
+      border-bottom: $border-bottom;
+      padding: $main-padding 0;
+      @media screen and (max-width: $break-large){
+        padding: none;
+        width: $input-width/2;
+      }
     }
     .delete-btn{
       float: right;
@@ -174,6 +178,9 @@ button {
         background-color: $delete-button-hover-color;
         cursor: pointer;
       }
+      @media screen and (max-width: $break-large){
+        margin-right: $main-margin;
+      }
     }
     .title{
       display: inline-block;
@@ -181,6 +188,7 @@ button {
       float: left;
       margin-left: $main-margin;
       font-size: $page-text-size + 15;
+      height: 100%;
     }
     .task{
       float: left;
@@ -188,6 +196,8 @@ button {
       width: $tasks-width;
       height: 30px;
       margin: $main-margin;
+      height: 100%;
+
     }
     .down-btn, .up-btn{
       float: left;
@@ -197,12 +207,18 @@ button {
         background-color: $button-hover-color;
         cursor: pointer;
       }
+      @media screen and (max-width: $break-large){
+        margin: $main-margin/2;
+      }
     }
     .importance-rating {
       display: block;
       margin: $main-margin;
       width: 200px;
       display: inline-block;
+      @media screen and (max-width: $break-large){
+        text-align: left;
+      }
     }
     .completed-btn {
       float: right;
@@ -217,6 +233,9 @@ button {
       &:hover{
         background-color: $button-hover-color;
         cursor: pointer;
+      }
+      @media screen and (max-width: $break-large){
+        margin: $main-margin;
       }
     }
   }
