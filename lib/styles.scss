@@ -183,6 +183,8 @@ button {
   }
   .show-more-todos{
     width: $delete-completed-width;
+    font-size: 11.3;
+    font-weight: normal;
     &:hover{
       background-color: $button-hover-color;
       cursor: pointer;
