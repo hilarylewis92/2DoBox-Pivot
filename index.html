@@ -7,9 +7,9 @@
   <body>
     <header class="hero">
       <h1>2DoBox</h1>
-      <input class="title-input" type="text" placeholder="Title" aria-label='input title'><br>
-      <input class="task-input" type="text" placeholder="Task" aria-label='input task'><br>
-      <input class="save-btn" type="button" value="save" aria-label='save' disabled>
+      <input class="title-input" type="text" placeholder="Title" aria-label='input title' tabindex="0"><br>
+      <input class="task-input" type="text" placeholder="Task" aria-label='input task' tabindex="0"><br>
+      <input class="save-btn" type="button" value="save" aria-label='save' tabindex="0" disabled>
     </header>
 
     <section class="list">
@@ -19,32 +19,32 @@
       </section>
 
       <nav class="search-section">
-        <input class="search-input" type="text" placeholder="search TODOs" aria-label='search todos'>
+        <input class="search-input" type="text" tabindex="0" placeholder="search TODOs" aria-label='search todos'>
       </nav>
 
       <nav class="filter-by">
         <h3 class="filter-title">Filter by:</h3>
-        <label for="critical-filter">
-          <span>Critical<input type="radio" name="filter" id="critical-filter" aria-labeledby="filter" class="critical-btn" value="Critical"></span>
+        <label for="critical-filter" tabindex="0">
+          <span>Critical<input type="radio" name="filter"  id="critical-filter" aria-labeledby="filter" class="critical-btn" value="Critical"></span>
         </label>
-        <label for="high-filter">
+        <label for="high-filter" tabindex="0">
           <span>High<input type="radio" name="filter" id="high-filter" aria-labeledby="filter" class="high-btn" value="High"></span>
         </label>
-        <label for="normal-filter">
+        <label for="normal-filter" tabindex="0">
           <span>Normal<input type="radio" name="filter" id="normal-filter" aria-labeledby="filter" class="normal-btn" value="Normal"></span>
         </label>
-        <label for="low-filter">
+        <label for="low-filter" tabindex="0">
           <span>Low<input type="radio" name="filter" id="low-filter" aria-labeledby="filter" class="low-btn" value="Low"></span>
         </label>
-        <label for="none-filter">
+        <label for="none-filter" tabindex="0">
           <span>None<input type="radio" name="filter" id="none-filter" aria-labeledby="filter" class="none-btn" value="None"></span>
         </label>
-        <button type="button" class="remove-filters-btn" aria-label=“remove-filters-btn”>Remove filters</button>
+        <button type="button" class="remove-filters-btn" tabindex="0" aria-label=“remove-filters-btn”>Remove filters</button>
       </nav>
 
       <nav class="show-completed-delete-section">
-        <input class="show-completed-btn" type="button" value="show completed">
-        <button class="delete-all-todos" type="button">delete all</button>
+        <input class="show-completed-btn" type="button" tabindex="0" value="show completed">
+        <button class="delete-all-todos" tabindex="0" type="button">delete all</button>
       </nav>
 
       <ul class= "todo-list"></ul>

@@ -10,7 +10,8 @@
 button {
   background-color: $button-background-color;
   color: $button-font-color;
-  outline: none;
+  outline: !important;
+  outline-color: red;
   border: none;
   font-size: $page-text-size;
   width: $button-width;
@@ -43,7 +44,8 @@ button {
     font-size: $page-text-size;
     background-color: $input-background-color;
     color: $input-color;
-    outline: none;
+    outline: !important;
+    outline-color: red;
     @media screen and (max-width: $break-large){
       width: $input-width/2;
     }
@@ -51,7 +53,8 @@ button {
   .save-btn {
     background-color: $button-background-color;
     color: $button-font-color;
-    outline: none;
+    outline: !important;
+    outline-color: red;
     border: none;
     width: $save-remove-btn-width;
     font-size: $page-text-size;
@@ -84,7 +87,8 @@ button {
     font-size: $page-text-size;
     background-color: $input-background-color;
     color: $input-color;
-    outline: none;
+    outline: !important;
+    outline-color: red;
     @media screen and (max-width: $break-large){
       width: $input-width/2;
     }
@@ -104,6 +108,8 @@ button {
     label {
       margin: $main-margin;
       font-size: $page-text-size;
+      outline: !important;
+      outline-color: red;
       @media screen and (max-width: $break-large){
         display: block;
       }
@@ -131,7 +137,8 @@ button {
   .show-completed-btn{
     background-color: $button-background-color;
     color: $button-font-color;
-    outline: none;
+    outline: !important;
+    outline-color: red;
     border: none;
     font-size: $page-text-size;
     width: $delete-completed-width;
@@ -236,3 +243,7 @@ button {
   text-decoration: line-through;
   color: $completed-color;
 }
+
+// [tabindex]{
+//   outline: !important;
+// }
