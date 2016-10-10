@@ -12,8 +12,19 @@ button {
   color: $button-font-color;
   outline: none;
   border: none;
-  font-size: $button-font-size;
+  font-size: $page-text-size;
   width: $button-width;
+  &:hover{
+    background-color: $button-hover-color;
+    cursor: pointer;
+  }
+  @media screen and (max-width: $break-large){
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: $input-width/3;
+  }
 }
 
 .hero {
@@ -26,31 +37,29 @@ button {
     font-size: 70px;
     font-weight: $page-font-weight;
   }
-  .title-input {
+  .title-input, .task-input {
     width: $input-width;
     height: $input-height;
     text-align: $input-text-align;
-    font-size: $input-font-size;
+    font-size: $page-text-size;
     background-color: $input-background-color;
     color: $input-color;
     outline: none;
-  }
-  .task-input {
-    width: $input-width;
-    height: $input-height;
-    text-align: $input-text-align;
-    font-size: $input-font-size;
-    background-color: $input-background-color;
-    color: $input-color;
-    outline: none;
+    @media screen and (max-width: $break-large){
+      width: $input-width/2;
+    }
   }
   .save-btn {
     background-color: $button-background-color;
     color: $button-font-color;
     outline: none;
     border: none;
-    font-size: $button-font-size;
     width: $save-remove-btn-width;
+    font-size: $page-text-size;
+    &:hover{
+      background-color: $button-hover-color;
+      cursor: pointer;
+    }
   }
 }
 
@@ -60,303 +69,147 @@ button {
     height: 20px;
     color: $page-text-color;
     font-weight: $page-font-weight;
-    font-size: $page-text-size;
+    font-size: $page-text-size + 5;
     padding: $main-padding;
   }
   .search-input {
     width: $input-width;
     height: $input-height;
     text-align: $input-text-align;
-    font-size: $input-font-size;
+    font-size: $page-text-size;
     background-color: $input-background-color;
     color: $input-color;
     outline: none;
+    @media screen and (max-width: $break-large){
+      width: $input-width/2;
+    }
   }
   .filter-by{
-    margin: 50px;
+    border-bottom: $border-bottom;
+    width: $input-width;
+    margin: auto;
     h3{
       color: $page-text-color;
       font-weight: $page-font-weight;
-      font-size: $page-text-size;
+      font-size: $page-text-size + 5;
     }
     .remove-filters-btn {
       background-color: $delete-color;
       width: $save-remove-btn-width;
+      &:hover{
+        background-color: $delete-button-hover-color;
+        cursor: pointer;
+      }
+      @media screen and (max-width: $break-large){
+        width: $save-remove-btn-width/2;
+      }
     }
   }
   .show-completed-delete-section{
-    margin: 50px;
-    .show-completed-btn{
-      background-color: $button-background-color;
-      color: $button-font-color;
-      outline: none;
-      border: none;
-      font-size: $button-font-size;
-      width: $delete-completed-width;
-    }
-    .delete-all-todos{
-      width: $delete-completed-width;
-      background-color: $delete-color;
+    border-bottom: $border-bottom;
+    width: $input-width;
+    margin: auto;
+  }
+  .show-completed-btn{
+    background-color: $button-background-color;
+    color: $button-font-color;
+    outline: none;
+    border: none;
+    font-size: $page-text-size;
+    width: $delete-completed-width;
+    &:hover{
+      background-color: $button-hover-color;
+      cursor: pointer;
     }
   }
+  .delete-all-todos{
+    width: $delete-completed-width;
+    background-color: $delete-color;
+    &:hover{
+      background-color: $delete-button-hover-color;
+      cursor: pointer;
+    }
+  }
+  ul {
+    margin: auto;
+    padding: $main-padding;
+    li {
+      margin: auto;
+      font-size: $page-text-size;
+      color: $page-text-color;
+      text-align: left;
+      border-bottom: $border-bottom;
+      padding: $main-padding;
+      width: $input-width;
+    }
 
-
+    .delete-btn{
+      float: right;
+      color: $color-cream;
+      background-color: $delete-color;
+      width: $delete-completed-width;
+      &:hover{
+        background-color: $delete-button-hover-color;
+        cursor: pointer;
+      }
+    }
+    .title{
+      display: inline-block;
+      width: $title-width;
+      text-align: left;
+      float: left;
+      font-size: $page-text-size + 15;
+    }
+    .task{
+      float: left;
+      text-align: left;
+      width: $tasks-width;
+      height: 30px;
+      margin: $main-margin 0 ;
+    }
+    .down-btn, .up-btn{
+      float: left;
+      width: $delete-completed-width;
+      background-color: $button-background-color;
+      &:hover{
+        background-color: $button-hover-color;
+        cursor: pointer;
+      }
+    }
+    .importance-rating {
+      display: block;
+      margin: $main-margin;
+      width: 20px;
+      text-align: left;
+    }
+    .completed-btn {
+      float: right;
+      font-size: $page-text-size;
+      font-weight: normal;
+      background-color: $button-background-color;
+      color: $color-cream;
+      outline: none;
+      border: none;
+      width: $delete-completed-width;
+      &:hover{
+        background-color: $button-hover-color;
+        cursor: pointer;
+      }
+    }
+  }
   .show-more-todos{
-    width: $save-remove-btn-width;
+    width: $delete-completed-width;
+    font-size: $page-text-size;
+    color: $color-cream;
+    font-weight: normal;
+    &:hover{
+      background-color: $button-hover-color;
+      cursor: pointer;
+    }
   }
 }
 
-// .up-btn {
-//   background-image: url('../images/upvote.svg');
-//   background-color: transparent;
-//   border: none;
-//   height: 30px;
-//   width: 30px;
-//   padding: 10px;
-// }
-
-
-// h1 {
-//   font-family: 'Roboto Slab', serif;
-//   padding: 20px;
-//   font-size: 60px;
-//   color: #00A79D
-// }
-//
-// span {
-//   color: #6D6E71
-// }
-//
-// body {
-//   font-family: 'Open Sans', sans-serif;
-//   text-align: center;
-// }
-// .hero {
-//   height: 100%;
-//   background: #E5F3F2;
-//   text-align: center;
-//   padding: 30px;
-// }
-//
-// input {
-//   font-size: 25px;
-//   color: "black";
-//   width: 50%;
-//   margin: 10px;
-//   outline: none;
-// }
-//
-// button {
-//   color: #FFFFFF;
-//   background-color: #00A79D;
-//   border: none;
-//   font-size: 20px;
-//   color: "black";
-//   width: 7%;
-//   margin: 10px;
-//   outline: none;
-// }
-// button:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .show-more-todos{
-//   width: 15%;
-// }
-//
-// .save-btn {
-//   color: #FFFFFF;
-//   background-color: #00A79D;
-//   font-size: 20px;
-//   border: none;
-//   height: 30px;
-// }
-//
-// .save-btn:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .show-completed-btn {
-//   color: #FFFFFF;
-//   background-color: #00A79D;
-//   font-size: 20px;
-//   border:none;
-//   height: 30px;
-// }
-//
-// .show-completed-btn:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .list {
-//   height: 100%;
-//   padding: 30px;
-// }
-//
-// ul {
-//   width: 50%;
-//   margin: auto;
-// }
-//
-// li {
-//   font-size: 20px;
-//   text-align: left;
-//   border-bottom: 1px solid #D1D3D4;
-//   padding: 25px;
-//   width: 100%;
-//   height: 100%;
-// }
-//
-// .completed .first-line{
-//   text-decoration: line-through;
-//   color: red;
-// }
-//
-// .completed .importance-rating{
-//   text-decoration: line-through;
-//   color: red;
-// }
-//
-// .completed .task{
-//   text-decoration: line-through;
-//   color: red;
-// }
-// .completed {
-//   text-decoration: line-through;
-//   color: red;
-// }
-//
-// .title {
-//   font-size: 30px;
-//   font-family: 'Roboto Slab', serif;
-//   color: #6D6E71;
-// }
-//
-// .body {
-//   font-family: 'Open Sans', sans-serif;
-//   font-size: 18px;
-//   color: #939598;
-//   margin-bottom: 20px;
-//   display: block;
-// }
-//
-// .quality {
-//   color:#6D6E71;
-//   font-size: 15px;
-// }
-//
-// .first-line {
-//   padding-bottom: 20px;
-// }
-//
-// .second-line{
-//   padding-bottom: 20px;
-// }
-//
-// .third-line {
-//   padding-bottom: 20px;
-// }
-//
-// .up-btn {
-//   background-image: url('images/upvote.svg');
-//   background-color: transparent;
-//   border: none;
-//   height: 30px;
-//   width: 30px;
-//   padding: 10px;
-// }
-//
-// .up-btn:hover {
-//   background-image: url('images/upvote-hover.svg');
-//   background-color: transparent;
-//   border: none;
-//   height: 30px;
-//   width: 30px;
-// }
-//
-// .down-btn {
-//   background-image: url('images/downvote.svg');
-//   background-color: transparent;
-//   border: none;
-//   height: 30px;
-//   width: 30px;
-//   padding: 10px;
-//   margin: 0px 10px;
-// }
-//
-// .down-btn:hover {
-//   background-image: url('images/downvote-hover.svg');
-//   background-color: transparent;
-//   border: none;
-//   height: 30px;
-//   width: 30px;
-// }
-//
-// .delete-btn {
-//   background: url('images/delete.svg') no-repeat;
-//   border: none;
-//   height: 30px;
-//   width: 30px;
-//   float: right;
-// }
-//
-// .delete-btn:hover {
-//   background-image: url('images/delete-hover.svg');
-//   height: 30px;
-//   width: 30px;
-// }
-//
-// .completed-btn {
-//   background-color: #00A79D;
-//   border: none;
-//   color: #FFFFFF;
-//   float: right;
-//   font-size: 20px;
-//   height: 100%;
-//   width: 25%;
-// }
-//
-// .completed-btn:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .todo-count-output {
-//   color: white;
-// }
-//
-//
-// @media screen and (max-width: 600px){
-//   .hero {
-//     height: 300px;
-//   }
-//
-//   input {
-//     font-size: 20px;
-//     width: 90%;
-//   }
-//
-//   .task-input {
-//     height: 90px;
-//     vertical-align: : top;
-//   }
-//
-//   ul {
-//     width: 90%;
-//   }
-//
-//   h1 {
-//     font-size: 40px;
-//   }
-//
-//   .title {
-//     font-size: 25px;
-//   }
-//
-//   .body {
-//     font-size: 15px;
-//   }
-// }
+.completed .title,.completed .task, .completed .importance-rating{
+  text-decoration: line-through;
+  color: $completed-color;
+}

@@ -1,47 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
     <title>2DoBox-Pivot</title>
   </head>
 
   <body>
-    <div class="hero">
+    <header class="hero">
       <h1>2DoBox</h1>
-      <input class="title-input" type="text" placeholder="Title"><br>
-      <input class="task-input" type="text" placeholder="Task"><br>
-      <input class="save-btn" type="button" value="save" disabled>
-    </div>
+      <input class="title-input" type="text" placeholder="Title" aria-label='input title'><br>
+      <input class="task-input" type="text" placeholder="Task" aria-label='input task'><br>
+      <input class="save-btn" type="button" value="save" aria-label='save' disabled>
+    </header>
 
-    <div class="list">
-      <div class="count">
-        <h4 class="char-count-output"></h4>
-        <h5 class="todo-count-output"></h5>
-      </div>
+    <section class="list">
+      <section class="count">
+        <h4 class="char-count-output" role='none'></h4>
+        <h5 class="todo-count-output" role='none'></h5>
+      </section>
 
-      <div class="search-section">
-        <input class="search-input" type="text" placeholder="search TODOs">
-      </div>
+      <nav class="search-section">
+        <input class="search-input" type="text" placeholder="search TODOs" aria-label='search todos'>
+      </nav>
 
-      <div class="filter-by">
+      <nav class="filter-by">
         <h3 class="filter-title">Filter by:</h3>
-        <button type="button" class="critical-btn"aria-label=“critical-btn” aria-label=“remove-filters-btn”>Critical</button>
+        <button type="button" class="critical-btn" aria-label=“critical-btn”>Critical</button>
         <button type="button" class="high-btn" aria-label=“high-btn”>High</button>
         <button type="button" class="normal-btn" aria-label=“normal-btn”>Normal</button>
         <button type="button" class="low-btn" aria-label=“low-btn”>Low</button>
         <button type="button" class="none-btn" aria-label=“none-btn”>None</button>
-        <br>
         <button type="button" class="remove-filters-btn" aria-label=“remove-filters-btn”>Remove filters</button>
-      </div>
+      </nav>
 
-      <div class="show-completed-delete-section">
+      <nav class="show-completed-delete-section">
         <input class="show-completed-btn" type="button" value="show completed">
         <button class="delete-all-todos" type="button">delete all</button>
-      </div>
+      </nav>
 
       <ul class= "todo-list"></ul>
 
       <button type="button" class="show-more-todos">show more...</button>
-    </div>
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="main.bundle.js"></script>

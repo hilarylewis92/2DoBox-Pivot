@@ -28,7 +28,7 @@ describe('attributes on our application',function(){
 
     var allTodos = browser.getText("li");
 
-     assert.equal(allTodos.replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal');
+     assert.equal(allTodos.replace(/\n/, ", ").replace(/\n\n/, ", ").replace(/\n\n\n/, ", ").replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, delete task, buy milk now, up vote, down vote, Importance: Normal');
   }); //end of add ideas test
 
   it("should persist data after reload", function () {
@@ -45,7 +45,7 @@ describe('attributes on our application',function(){
 
     var allTodos = browser.getText("li");
 
-     assert.equal(allTodos[0].replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal')
+     assert.equal(allTodos[0].replace(/\n/, ", ").replace(/\n\n/, ", ").replace(/\n\n\n/, ", ").replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, delete task, buy milk now, up vote, down vote, Importance: Normal')
   }); //end of persist data
 
   it("should clear items from input fields when the user presses save", function () {
@@ -300,7 +300,7 @@ describe('attributes on our application',function(){
 
     browser.url('/');
 
-    assert.equal(browser.getText(".edit-title")[0], 'buy cats milk');
+    assert.equal(browser.getText(".edit-title")[0], 'buy milkcats');
 
   }); //end of edit title and body
 
