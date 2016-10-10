@@ -22,13 +22,32 @@
         <input class="search-input" type="text" placeholder="search TODOs" aria-label='search todos'>
       </nav>
 
-      <nav class="filter-by">
+      <!-- <nav class="filter-by">
         <h3 class="filter-title">Filter by:</h3>
         <button type="button" class="critical-btn" aria-label=“critical-btn”>Critical</button>
         <button type="button" class="high-btn" aria-label=“high-btn”>High</button>
         <button type="button" class="normal-btn" aria-label=“normal-btn”>Normal</button>
         <button type="button" class="low-btn" aria-label=“low-btn”>Low</button>
         <button type="button" class="none-btn" aria-label=“none-btn”>None</button>
+        <button type="button" class="remove-filters-btn" aria-label=“remove-filters-btn”>Remove filters</button>
+      </nav> -->
+      <nav class="filter-by">
+        <h3 class="filter-title">Filter by:</h3>
+        <label for="critical-filter">
+          <span>Critical<input type="radio" name="filter" id="critical-filter" aria-labeledby="filter" class="critical-btn" value="Critical"></span>
+        </label>
+        <label for="high-filter">
+          <span>High<input type="radio" name="filter" id="high-filter" aria-labeledby="filter" class="high-btn" value="High"></span>
+        </label>
+        <label for="normal-filter">
+          <span>Normal<input type="radio" name="filter" id="normal-filter" aria-labeledby="filter" class="normal-btn" value="Normal"></span>
+        </label>
+        <label for="low-filter">
+          <span>Low<input type="radio" name="filter" id="low-filter" aria-labeledby="filter" class="low-btn" value="Low"></span>
+        </label>
+        <label for="none-filter">
+          <span>None<input type="radio" name="filter" id="none-filter" aria-labeledby="filter" class="none-btn" value="None"></span>
+        </label>
         <button type="button" class="remove-filters-btn" aria-label=“remove-filters-btn”>Remove filters</button>
       </nav>
 
