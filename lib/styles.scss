@@ -20,7 +20,9 @@ button {
   }
   @media screen and (max-width: $break-large){
     display: block;
-    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: $input-width/3;
   }
 }
@@ -86,9 +88,6 @@ button {
     border-bottom: $border-bottom;
     width: $input-width;
     margin: auto;
-    @media screen and (max-width: $break-large){
-      margin: auto;
-    }
     h3{
       color: $page-text-color;
       font-weight: $page-font-weight;
