@@ -159,6 +159,12 @@ button {
         cursor: pointer;
       }
     }
+    .importance-rating {
+      display: block;
+      margin: $main-margin;
+      width: 20px;
+      text-align: left;
+    }
     .completed-btn {
       float: right;
       background-color: $button-background-color;
