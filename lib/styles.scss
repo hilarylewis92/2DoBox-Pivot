@@ -122,9 +122,10 @@ button {
       color: $page-text-color;
       text-align: left;
       border-bottom: $border-bottom;
-      height: 100%;
       padding: $main-padding;
+      width: $input-width;
     }
+
     .delete-btn{
       float: right;
       color: $color-cream;
@@ -136,13 +137,17 @@ button {
       }
     }
     .title{
+      display: inline-block;
       width: $title-width;
       text-align: left;
+      float: left;
+      font-size: 30px;
     }
     .task{
       float: left;
       text-align: left;
       width: $tasks-width;
+      height: 30px;
       margin: $main-margin 0 ;
     }
     .down-btn, .up-btn{
@@ -154,6 +159,7 @@ button {
         cursor: pointer;
       }
     }
+
     .completed-btn {
       float: right;
       background-color: $button-background-color;
