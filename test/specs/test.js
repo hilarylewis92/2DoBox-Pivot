@@ -300,7 +300,7 @@ describe('attributes on our application',function(){
 
     browser.url('/');
 
-    assert.equal(browser.getText(".edit-title")[0], 'buy milkcats');
+    assert.equal(browser.getText(".edit-title")[0], 'buy cats milk');
 
   }); //end of edit title and body
 

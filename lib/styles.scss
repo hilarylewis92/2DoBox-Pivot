@@ -156,8 +156,6 @@ button {
     }
   }
   ul {
-    margin: auto;
-    padding: $main-padding;
     li {
       margin: auto;
       font-size: $page-text-size;
@@ -167,7 +165,6 @@ button {
       padding: $main-padding;
       width: $input-width;
     }
-
     .delete-btn{
       float: right;
       color: $color-cream;
@@ -180,9 +177,9 @@ button {
     }
     .title{
       display: inline-block;
-      width: $title-width;
       text-align: left;
       float: left;
+      margin-left: $main-margin;
       font-size: $page-text-size + 15;
     }
     .task{
@@ -190,7 +187,7 @@ button {
       text-align: left;
       width: $tasks-width;
       height: 30px;
-      margin: $main-margin 0 ;
+      margin: $main-margin;
     }
     .down-btn, .up-btn{
       float: left;
@@ -204,8 +201,8 @@ button {
     .importance-rating {
       display: block;
       margin: $main-margin;
-      width: 20px;
-      text-align: left;
+      width: 200px;
+      display: inline-block;
     }
     .completed-btn {
       float: right;
@@ -215,6 +212,7 @@ button {
       color: $color-cream;
       outline: none;
       border: none;
+      display: inline-block;
       width: $delete-completed-width;
       &:hover{
         background-color: $button-hover-color;
