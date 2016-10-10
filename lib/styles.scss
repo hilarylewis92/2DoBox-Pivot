@@ -115,7 +115,6 @@ button {
     }
   }
   ul {
-    width: $input-width;
     margin: auto;
     padding: $main-padding;
     li {
@@ -125,10 +124,16 @@ button {
       border-bottom: $border-bottom;
       height: 100%;
       padding: $main-padding;
-
     }
     .delete-btn{
       float: right;
+      color: $color-cream;
+      background-color: $delete-color;
+      width: $delete-completed-width;
+      &:hover{
+        background-color: $delete-button-hover-color;
+        cursor: pointer;
+      }
     }
     .title{
       width: $title-width;
@@ -139,16 +144,15 @@ button {
       text-align: left;
       width: $tasks-width;
       margin: $main-margin 0 ;
-      height: 100%;
     }
     .down-btn, .up-btn{
       float: left;
-      // background-image: url('../images/upvote.svg');
-      // background-color: transparent;
-      // border: none;
-      // height: 30px;
-      // width: 30px;
-      // padding: $main-padding;
+      width: $delete-completed-width;
+      background-color: $button-background-color;
+      &:hover{
+        background-color: $button-hover-color;
+        cursor: pointer;
+      }
     }
     .completed-btn {
       float: right;
