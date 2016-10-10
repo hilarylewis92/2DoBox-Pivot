@@ -72,6 +72,9 @@ button {
     font-size: $page-text-size + 5;
     padding: $main-padding;
   }
+  .todo-count-output{
+    color: $color-cream;
+  }
   .search-input {
     width: $input-width;
     height: $input-height;
