@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n* {\n  text-align: center;\n  margin: 10px; }\n\nbutton {\n  background-color: #1F4E5F;\n  color: #F4F7F7;\n  outline: none;\n  border: none;\n  font-size: 15px;\n  width: 80px; }\n\n.hero {\n  background-color: #79A8A9;\n  height: 100%;\n  padding: 50px; }\n  .hero h1 {\n    color: #1F4E5F;\n    margin-bottom: 10px;\n    font-size: 70px;\n    font-weight: bold; }\n  .hero .title-input {\n    width: 50em;\n    height: 30px;\n    text-align: left;\n    font-size: 18px;\n    background-color: #F4F7F7;\n    color: #1F4E5F;\n    outline: none; }\n  .hero .task-input {\n    width: 50em;\n    height: 30px;\n    text-align: left;\n    font-size: 18px;\n    background-color: #F4F7F7;\n    color: #1F4E5F;\n    outline: none; }\n  .hero .save-btn {\n    background-color: #1F4E5F;\n    color: #F4F7F7;\n    outline: none;\n    border: none;\n    font-size: 15px;\n    width: 20em; }\n\n.list {\n  background-color: #F4F7F7; }\n  .list .count {\n    height: 20px;\n    color: #1F4E5F;\n    font-weight: bold;\n    font-size: 20px;\n    padding: 50px; }\n  .list .search-input {\n    width: 50em;\n    height: 30px;\n    text-align: left;\n    font-size: 18px;\n    background-color: #F4F7F7;\n    color: #1F4E5F;\n    outline: none; }\n  .list .filter-by {\n    margin: 50px; }\n    .list .filter-by h3 {\n      color: #1F4E5F;\n      font-weight: bold;\n      font-size: 20px; }\n    .list .filter-by .remove-filters-btn {\n      background-color: red;\n      width: 20em; }\n  .list .show-completed-delete-section {\n    margin: 50px; }\n    .list .show-completed-delete-section .show-completed-btn {\n      background-color: #1F4E5F;\n      color: #F4F7F7;\n      outline: none;\n      border: none;\n      font-size: 15px;\n      width: 9em; }\n    .list .show-completed-delete-section .delete-all-todos {\n      width: 9em;\n      background-color: red; }\n  .list .show-more-todos {\n    width: 20em; }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n* {\n  text-align: center;\n  margin: 10px; }\n\nbutton {\n  background-color: #1F4E5F;\n  color: white;\n  outline: !important;\n  outline-color: red;\n  border: none;\n  font-size: 20px;\n  width: 80px; }\n  button:hover {\n    background-color: #4D727E;\n    cursor: pointer; }\n  @media screen and (max-width: 570px) {\n    button {\n      display: block;\n      margin: auto;\n      margin-top: 10px;\n      margin-bottom: 10px;\n      width: 20em; } }\n\n.hero {\n  background-color: #79A8A9;\n  height: 100%; }\n  .hero h1 {\n    color: #1F4E5F;\n    margin-bottom: 10px;\n    font-size: 70px;\n    font-weight: bold; }\n  .hero .title-input, .hero .task-input {\n    width: 40em;\n    height: 30px;\n    text-align: left;\n    font-size: 20px;\n    background-color: #F4F7F7;\n    color: #1F4E5F;\n    outline: !important;\n    outline-color: red; }\n    @media screen and (max-width: 570px) {\n      .hero .title-input, .hero .task-input {\n        width: 20em; } }\n  .hero .save-btn {\n    background-color: #1F4E5F;\n    color: white;\n    outline: !important;\n    outline-color: red;\n    border: none;\n    width: 20em;\n    font-size: 20px; }\n    .hero .save-btn:hover {\n      background-color: #4D727E;\n      cursor: pointer; }\n    @media screen and (max-width: 570px) {\n      .hero .save-btn {\n        width: 20em; } }\n\n.list {\n  background-color: #F4F7F7; }\n  .list .count {\n    height: 20px;\n    color: #1F4E5F;\n    font-weight: bold;\n    font-size: 25px;\n    padding: 50px; }\n  .list .todo-count-output {\n    color: #F4F7F7; }\n  .list .search-input {\n    width: 40em;\n    height: 30px;\n    text-align: left;\n    font-size: 20px;\n    background-color: #F4F7F7;\n    color: #1F4E5F;\n    outline: !important;\n    outline-color: red; }\n    @media screen and (max-width: 570px) {\n      .list .search-input {\n        width: 20em; } }\n  .list .filter-by {\n    border-bottom: 1px solid #D1D3D4;\n    width: 40em;\n    margin: auto; }\n    @media screen and (max-width: 570px) {\n      .list .filter-by {\n        width: 20em; } }\n    .list .filter-by h3 {\n      color: #1F4E5F;\n      font-weight: bold;\n      font-size: 25px; }\n    .list .filter-by label {\n      margin: 10px;\n      font-size: 20px;\n      outline: !important;\n      outline-color: red; }\n      @media screen and (max-width: 570px) {\n        .list .filter-by label {\n          display: block; } }\n    .list .filter-by .remove-filters-btn {\n      background-color: #b12c2c;\n      width: 8em; }\n      .list .filter-by .remove-filters-btn:hover {\n        background-color: #b37376;\n        cursor: pointer; }\n      @media screen and (max-width: 570px) {\n        .list .filter-by .remove-filters-btn {\n          width: 10em; } }\n  .list .show-completed-delete-section {\n    border-bottom: 1px solid #D1D3D4;\n    width: 40em;\n    margin: auto; }\n    @media screen and (max-width: 570px) {\n      .list .show-completed-delete-section {\n        width: 20em; } }\n  .list .show-completed-btn {\n    background-color: #1F4E5F;\n    color: white;\n    outline: !important;\n    outline-color: red;\n    border: none;\n    font-size: 20px;\n    width: 8em; }\n    .list .show-completed-btn:hover {\n      background-color: #4D727E;\n      cursor: pointer; }\n  .list .delete-all-todos {\n    width: 8em;\n    background-color: #b12c2c; }\n    .list .delete-all-todos:hover {\n      background-color: #b37376;\n      cursor: pointer; }\n  .list ul li {\n    margin: auto;\n    font-size: 20px;\n    color: #1F4E5F;\n    text-align: left;\n    border-bottom: 1px solid #D1D3D4;\n    padding: 50px;\n    width: 40em; }\n  .list ul .delete-btn {\n    float: right;\n    color: #F4F7F7;\n    background-color: #b12c2c;\n    width: 8em; }\n    .list ul .delete-btn:hover {\n      background-color: #b37376;\n      cursor: pointer; }\n  .list ul .title {\n    display: inline-block;\n    text-align: left;\n    float: left;\n    margin-left: 10px;\n    font-size: 35px; }\n  .list ul .task {\n    float: left;\n    text-align: left;\n    width: 100%;\n    height: 30px;\n    margin: 10px; }\n  .list ul .down-btn, .list ul .up-btn {\n    float: left;\n    width: 8em;\n    background-color: #1F4E5F; }\n    .list ul .down-btn:hover, .list ul .up-btn:hover {\n      background-color: #4D727E;\n      cursor: pointer; }\n  .list ul .importance-rating {\n    display: block;\n    margin: 10px;\n    width: 200px;\n    display: inline-block; }\n  .list ul .completed-btn {\n    float: right;\n    font-size: 20px;\n    font-weight: normal;\n    background-color: #1F4E5F;\n    color: #F4F7F7;\n    outline: none;\n    border: none;\n    display: inline-block;\n    width: 8em; }\n    .list ul .completed-btn:hover {\n      background-color: #4D727E;\n      cursor: pointer; }\n  .list .show-more-todos {\n    width: 8em;\n    font-size: 20px;\n    color: #F4F7F7;\n    font-weight: normal; }\n    .list .show-more-todos:hover {\n      background-color: #4D727E;\n      cursor: pointer; }\n\n.completed .title, .completed .task, .completed .importance-rating {\n  text-decoration: line-through;\n  color: #b12c2c; }\n\n.completed {\n  text-decoration: line-through;\n  color: #b12c2c; }\n", ""]);
 
 	// exports
 
@@ -2086,141 +2086,222 @@
 	  this.tasksOnPage = [];
 	}
 
+	//elements object
+	const buttons = {
+	  characterCountOutput: $(".char-count-output"),
+	  editContent: $('.edit-content'),
+	  itemIsCompleted: $(".true"),
+	  saveBtn: $('.save-btn'),
+	  taskInput: $('.task-input'),
+	  titleInput: $('.title-input'),
+	  todoCountOutput: $(".todo-count-output")
+	};
+
+	//housekeeping functions
+	function clearOutTodosFromPage() {
+	  $(".todo-list").text("");
+	} //end of clearOutTodosFromPage
+
 	//page load functions
 	PageManager.prototype.renderLocalStorageToPage = function () {
 	  this.showTenTodos();
+	  this.clearInputFields();
 	};
 
 	PageManager.prototype.showTenTodos = function () {
 	  let that = this;
 	  let tenTodos = this.getTenTodos();
-	  tenTodos.forEach(function (todo) {
-	    if (todo.completed === false) {
-	      that.appendTodo(todo);
-	      that.tasksOnPage.push(todo);
-	    }
-	    $(".todo-count-output").text("There are " + that.tasksOnPage.length + " tasks on the page.");
-	  });
+	  this.putTenTodosOnPage(tenTodos, that);
 	};
 
 	PageManager.prototype.getTenTodos = function () {
 	  return this.storage.slice(0, 10);
 	};
 
-	PageManager.prototype.getLocalStorage = function () {
-	  return JSON.parse(localStorage.getItem('list'));
-	};
-
-	PageManager.prototype.appendTodo = function (todo) {
-	  return $('.todo-list').prepend(`
-	    <li class="todo ${ todo.completed }" id= ${ todo.id }>
-	      <div class='first-line'>
-	        <h2 contenteditable class="title edit-title edit-content search">${ todo.title }</h2>
-	        <button type="button" class="delete-btn" aria-label=“delete-btn”/></button>
-	      </div>
-	      <span contenteditable class="task edit-task edit-content search">${ todo.task }</span>
-	      <div class='third-line'>
-	        <button type="button" class="up-btn" aria-label=“up-btn”/></button>
-	        <button type="button" class="down-btn" aria-label=“down-btn”/></button>
-	        <span class="importance-rating">Importance: <span class="importance">${ todo.importance }</span></span>
-	        <input type="button" name="name" class="completed-btn" value="completed task" aria-label=“completed-btn-btn”>
-	      </div>
-	    </li>
-	    `);
-	}; //end of appendTodo
-
-	PageManager.prototype.addTenTodos = function () {
-
-	  let that = this;
-	  let tenMoreTodos = this.storage.slice(10, this.storage.length);
-	  tenMoreTodos.forEach(function (todo) {
+	PageManager.prototype.putTenTodosOnPage = function (tenTodos, that) {
+	  tenTodos.forEach(function (todo) {
 	    if (todo.completed === false) {
 	      that.appendTodo(todo);
 	      that.tasksOnPage.push(todo);
 	    }
-	    $(".todo-count-output").text("There are " + that.tasksOnPage.length + " tasks on the page.");
+	    let totalTasks = that.tasksOnPage.length;
+	    that.showHowManyTasksAreOnPage(totalTasks);
 	  });
-	}; //end of addTenTodos
+	}; //end of putTenTodosOnPage
+
+	PageManager.prototype.showHowManyTasksAreOnPage = function (totalTasks) {
+	  buttons.todoCountOutput.text("There are " + totalTasks + " tasks on the page.");
+	};
+
+	//core functionality
+
+	PageManager.prototype.appendTodo = function (todo) {
+	  return $('.todo-list').prepend(`
+	    <li class="todo ${ todo.completed }" id= ${ todo.id }>
+	    <div class="first-line">
+	      <h2 contenteditable class="title edit-title edit-content search" role="none">${ todo.title }</h2>
+	      <button type="button" class="delete-btn" aria-label=“delete-btn”>delete task</button>
+	    </div><br>
+	    <span contenteditable class="task edit-task edit-content search">${ todo.task }</span><br><br>
+	    <div class='third-line'>
+	      <button type="button" class="up-btn" aria-label=“up-btn”>up vote</button>
+	      <button type="button" class="down-btn" aria-label=“down-btn”>down vote</button>
+	      <span class="importance-rating">Importance: <span class="importance">${ todo.importance }</span></span>
+	      <input type="button" name="name" class="completed-btn" value="completed task" aria-label=“completed-btn-btn”>
+	    </div>
+	    </li>
+	    `);
+	}; //end of appendTodo
+
+	PageManager.prototype.putTasksOnPage = function () {
+	  let $title = buttons.titleInput.val();
+	  let $task = buttons.taskInput.val();
+	  this.makeTodoList($title, $task);
+	}; //end of putTasksOnPage
+
+	PageManager.prototype.makeTodoList = function (title, task) {
+	  let that = this;
+	  this.createSingleNewTodo(title, task, that);
+	}; //end of makeTodoList
+
+	PageManager.prototype.createSingleNewTodo = function (title, task, that) {
+	  let todo = new Todo(title, task);
+	  that.storage.push(todo);
+	  localStorage.setItem('list', JSON.stringify(that.storage));
+	  that.appendTodo(todo);
+	};
+
+	PageManager.prototype.clearInputFields = function () {
+	  buttons.titleInput.val("");
+	  buttons.taskInput.val("");
+	};
+
+	PageManager.prototype.toggleSaveButton = function () {
+	  let that = this;
+	  if (buttons.titleInput.val() !== '' && buttons.taskInput.val() !== '') {
+	    that.enableSaveButton();
+	  } else {
+	    that.disableSaveButton();
+	  }
+	}; // end of toggleSaveButton
+
+	PageManager.prototype.enableSaveButton = function () {
+	  buttons.saveBtn.attr('disabled', false);
+	};
+
+	PageManager.prototype.disableSaveButton = function () {
+	  buttons.saveBtn.attr('disabled', true);
+	};
+
+	PageManager.prototype.countUserChars = function (whatFieldIsThis) {
+	  let field;
+	  let that = this;
+	  if (whatFieldIsThis === "title-input") {
+	    field = buttons.titleInput.val();
+	  } else if (whatFieldIsThis === "task-input") {
+	    field = buttons.taskInput.val();
+	  }
+
+	  let len = field.length;
+
+	  if (buttons.taskInput.val().length > 120 || buttons.titleInput.val().length > 120) {
+	    that.disableSaveButton();
+	    that.showCharCount();
+	  } else {
+	    that.showCharCount(len);
+	  }
+	}; //end of countUserChars
+
+	PageManager.prototype.showCharCount = function (len) {
+	  if (len) {
+	    buttons.characterCountOutput.text("There are " + len + " " + "characters in this input field. (Max allowed: 120)");
+	  } else {
+	    buttons.characterCountOutput.text("Either the input field is empty or you submitted more than 120 characters. Please submit fewer than 120 characters to enable saving tasks to page.");
+	  }
+	}; //end of showCharCount
+
+	PageManager.prototype.searchForTitle = function (searchedForItem) {
+	  $("h2:contains('" + searchedForItem + "')").closest(".todo").show();
+	  $("h2:not(:contains('" + searchedForItem + "'))").closest(".todo").hide();
+	};
+
+	PageManager.prototype.searchForTask = function (searchedForItem) {
+	  $("span:contains('" + searchedForItem + "')").closest(".todo").show();
+	};
 
 	PageManager.prototype.findCompletedTasks = function () {
+	  this.putCompletedTasksOnPage();
+	}; //end of findCompletedTasks
+
+	PageManager.prototype.putCompletedTasksOnPage = function () {
 	  let that = this;
 	  this.storage.forEach(function (todo) {
 	    if (todo.completed === true) {
 	      that.appendTodo(todo);
 	    }
 	  });
-	}; //end of findCompletedTasks
+	}; //end of putCompletedTasksOnPage
 
-	PageManager.prototype.putTasksOnPage = function () {
-	  let $title = $('.title-input').val();
-	  let $task = $('.task-input').val();
-	  this.makeTodoList($title, $task);
-	}; //end of putTasksOnPage
+	PageManager.prototype.formatCompletedTasks = function () {
+	  $(".true").each(function () {
+	    $(this).addClass("completed");
+	  });
+	};
 
-	PageManager.prototype.makeTodoList = function (title, task) {
+	PageManager.prototype.filterByImportance = function (importanceToFilter) {
+	  this.addFilteredTodoToPage(importanceToFilter);
+	}; //end of filterByImportance
+
+	PageManager.prototype.addFilteredTodoToPage = function (importanceToFilter) {
 	  let that = this;
-	  let todo = new Todo(title, task);
-	  this.storage.push(todo);
-	  localStorage.setItem('list', JSON.stringify(that.storage));
-	  this.appendTodo(todo);
-	}; //end of makeTodoList
+	  this.storage.forEach(function (todo) {
+	    if (todo.importance === importanceToFilter) {
+	      that.appendTodo(todo);
+	    }
+	    that.formatCompletedTasks();
+	  }); //end of forEach
+	}; //end of addFilteredTodoToPage
 
-	PageManager.prototype.clearInputFields = function () {
-	  $('.title-input').val("");
-	  $('.task-input').val("");
+	PageManager.prototype.appendAllTodosToPage = function () {
+	  let that = this;
+	  this.storage.forEach(function (todo) {
+	    that.appendTodo(todo);
+	  });
+	}; //end of appendAllTodosToPage
+
+	PageManager.prototype.deleteAllTodosFromStorage = function () {
+	  this.storage = [];
+	  this.addAllItemsToLocalStorage();
 	};
 
-	PageManager.prototype.toggleSaveButton = function () {
-	  if ($('.title-input').val() !== '' && $('.task-input').val() !== '') {
-	    $('.save-btn').attr('disabled', false);
-	  } else {
-	    $('.save-btn').attr('disabled', true);
-	  }
-	}; // end of toggleSaveButton
-
-	PageManager.prototype.countUserChars = function (whatFieldIsThis) {
-	  let field;
-	  if (whatFieldIsThis === "title-input") {
-	    field = $('.title-input').val();
-	  } else if (whatFieldIsThis === "task-input") {
-	    field = $('.task-input').val();
-	  }
-	  $(".char-count-output").text("There are " + field.length + " " + "characters in this input field. (Max allowed: 120)");
-
-	  if ($('.task-input').val().length > 120 || $('.title-input').val().length > 120) {
-	    $('.save-btn').attr('disabled', true);
-	    $(".char-count-output").text("Error: cannot submit TODOs that are more than 120 characters.");
-	  }
-	}; //end of countUserChars
-
-	PageManager.prototype.findTodoById = function (id) {
-	  return this.storage.find(function (todo) {
-	    return todo.id === id;
-	  });
-	}; //end of findTodoById
-
-	PageManager.prototype.removeTodo = function (id) {
-	  this.storage = this.storage.filter(function (todo) {
-	    return todo.id != id;
-	  });
-	};
-
-	PageManager.prototype.changeToCompleted = function (foundTodo) {
-	  foundTodo.completed = true;
+	PageManager.prototype.addAllItemsToLocalStorage = function () {
 	  localStorage.setItem('list', JSON.stringify(this.storage));
 	};
 
 	PageManager.prototype.editTitle = function (id, newTitle) {
 	  todo = this.findTodoById(id);
 	  todo.title = newTitle;
-	  localStorage.setItem('list', JSON.stringify(this.storage));
+	  this.addAllItemsToLocalStorage();
 	}; //end of editTitle
 
 	PageManager.prototype.editTask = function (id, newTask) {
 	  todo = this.findTodoById(id);
 	  todo.task = newTask;
-	  localStorage.setItem('list', JSON.stringify(this.storage));
+	  this.addAllItemsToLocalStorage();
 	}; //end of editTitle
+
+	PageManager.prototype.temporarilyRemoveFieldEditablity = function () {
+	  $('.edit-content').prop('contenteditable', false);
+	  setTimeout(function () {
+	    $('.edit-content').prop('contenteditable', true);
+	  }, 10);
+	};
+
+	PageManager.prototype.findTodoById = function (id) {
+	  return this.storage.find(function (todo) {
+	    return todo.id === id;
+	  });
+	}; //end of findTodoById
 
 	PageManager.prototype.upvote = function (foundTodo) {
 
@@ -2253,57 +2334,41 @@
 	}; //end of downvote
 
 	PageManager.prototype.storeItemsAfterVoting = function () {
-	  localStorage.setItem('list', JSON.stringify(this.storage));
-	  $(".todo-list").text("");
+	  this.addAllItemsToLocalStorage();
+	  clearOutTodosFromPage();
 	  this.renderLocalStorageToPage();
 	};
 
-	PageManager.prototype.searchForTitle = function (searchedForItem) {
-	  $("h2:contains('" + searchedForItem + "')").closest(".todo").show();
-	  $("h2:not(:contains('" + searchedForItem + "'))").closest(".todo").hide();
+	PageManager.prototype.getLocalStorage = function () {
+	  return JSON.parse(localStorage.getItem('list'));
 	};
 
-	PageManager.prototype.searchForTask = function (searchedForItem) {
-	  $("span:contains('" + searchedForItem + "')").closest(".todo").show();
-	};
-
-	PageManager.prototype.formatCompletedTasks = function () {
-	  $(".true").each(function () {
-	    $(this).addClass("completed");
+	PageManager.prototype.removeTodo = function (id) {
+	  this.storage = this.storage.filter(function (todo) {
+	    return todo.id != id;
 	  });
+	};
+
+	PageManager.prototype.addTenTodos = function () {
+
+	  let that = this;
+	  let tenMoreTodos = this.storage.slice(10, this.storage.length);
+	  tenMoreTodos.forEach(function (todo) {
+	    if (todo.completed === false) {
+	      that.appendTodo(todo);
+	      that.tasksOnPage.push(todo);
+	    }
+	    $(".todo-count-output").text("There are " + that.tasksOnPage.length + " tasks on the page.");
+	  });
+	}; //end of addTenTodos
+
+	PageManager.prototype.changeToCompleted = function (foundTodo) {
+	  foundTodo.completed = true;
+	  this.putTodosInLocalStorage();
 	};
 
 	PageManager.prototype.formatSingleTaskAsCompleted = function (that) {
 	  that.parent().parent().addClass("completed");
-	};
-
-	PageManager.prototype.filterByImportance = function (importanceToFilter) {
-	  let that = this;
-	  this.storage.forEach(function (todo) {
-	    if (todo.importance === importanceToFilter) {
-	      that.appendTodo(todo);
-	    }
-	    that.formatCompletedTasks();
-	  }); //end of forEach
-	}; //end of filterByImportance
-
-	PageManager.prototype.appendAllTodosToPage = function () {
-	  let that = this;
-	  this.storage.forEach(function (todo) {
-	    that.appendTodo(todo);
-	  });
-	};
-
-	PageManager.prototype.deleteAllTodosFromStorage = function () {
-	  this.storage = [];
-	  localStorage.setItem('list', JSON.stringify(this.storage));
-	};
-
-	PageManager.prototype.temporarilyRemoveFieldEditablity = function () {
-	  $('.edit-content').prop('contenteditable', false);
-	  setTimeout(function () {
-	    $('.edit-content').prop('contenteditable', true);
-	  }, 10);
 	};
 
 	PageManager.prototype.putTodosInLocalStorage = function () {
