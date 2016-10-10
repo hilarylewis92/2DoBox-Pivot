@@ -14,6 +14,10 @@ button {
   border: none;
   font-size: $button-font-size;
   width: $button-width;
+  &:hover{
+    background-color: $button-hover-color;
+    cursor: pointer;
+  }
 }
 
 .hero {
@@ -26,16 +30,7 @@ button {
     font-size: 70px;
     font-weight: $page-font-weight;
   }
-  .title-input {
-    width: $input-width;
-    height: $input-height;
-    text-align: $input-text-align;
-    font-size: $input-font-size;
-    background-color: $input-background-color;
-    color: $input-color;
-    outline: none;
-  }
-  .task-input {
+  .title-input, .task-input {
     width: $input-width;
     height: $input-height;
     text-align: $input-text-align;
@@ -51,6 +46,10 @@ button {
     border: none;
     font-size: $button-font-size;
     width: $save-remove-btn-width;
+    &:hover{
+      background-color: $button-hover-color;
+      cursor: pointer;
+    }
   }
 }
 
@@ -73,7 +72,9 @@ button {
     outline: none;
   }
   .filter-by{
-    margin: 50px;
+    border-bottom: $border-bottom;
+    width: $input-width;
+    margin: auto;
     h3{
       color: $page-text-color;
       font-weight: $page-font-weight;
@@ -82,29 +83,101 @@ button {
     .remove-filters-btn {
       background-color: $delete-color;
       width: $save-remove-btn-width;
+      &:hover{
+        background-color: $delete-button-hover-color;
+        cursor: pointer;
+      }
     }
   }
   .show-completed-delete-section{
-    margin: 50px;
-    .show-completed-btn{
+    border-bottom: $border-bottom;
+    width: $input-width;
+    margin: auto;
+  }
+  .show-completed-btn{
+    background-color: $button-background-color;
+    color: $button-font-color;
+    outline: none;
+    border: none;
+    font-size: $button-font-size;
+    width: $delete-completed-width;
+    &:hover{
+      background-color: $button-hover-color;
+      cursor: pointer;
+    }
+  }
+  .delete-all-todos{
+    width: $delete-completed-width;
+    background-color: $delete-color;
+    &:hover{
+      background-color: $delete-button-hover-color;
+      cursor: pointer;
+    }
+  }
+  ul {
+    width: $input-width;
+    margin: auto;
+    padding: $main-padding;
+    li {
+      font-size: $page-text-size;
+      color: $page-text-color;
+      text-align: left;
+      border-bottom: $border-bottom;
+      height: 100%;
+      padding: $main-padding;
+
+    }
+    .delete-btn{
+      float: right;
+    }
+    .title{
+      width: $title-width;
+      text-align: left;
+    }
+    .task{
+      float: left;
+      text-align: left;
+      width: $tasks-width;
+      margin: $main-margin 0 ;
+      height: 100%;
+    }
+    .down-btn, .up-btn{
+      float: left;
+      // background-image: url('../images/upvote.svg');
+      // background-color: transparent;
+      // border: none;
+      // height: 30px;
+      // width: 30px;
+      // padding: $main-padding;
+    }
+    .completed-btn {
+      float: right;
       background-color: $button-background-color;
       color: $button-font-color;
       outline: none;
       border: none;
       font-size: $button-font-size;
       width: $delete-completed-width;
-    }
-    .delete-all-todos{
-      width: $delete-completed-width;
-      background-color: $delete-color;
+      &:hover{
+        background-color: $button-hover-color;
+        cursor: pointer;
+      }
     }
   }
-
-
   .show-more-todos{
-    width: $save-remove-btn-width;
+    width: $delete-completed-width;
+    &:hover{
+      background-color: $button-hover-color;
+      cursor: pointer;
+    }
   }
 }
+
+.completed .title,.completed .task, .completed .importance-rating{
+  text-decoration: line-through;
+  color: $completed-color;
+}
+
 
 // .up-btn {
 //   background-image: url('../images/upvote.svg');
@@ -116,119 +189,7 @@ button {
 // }
 
 
-// h1 {
-//   font-family: 'Roboto Slab', serif;
-//   padding: 20px;
-//   font-size: 60px;
-//   color: #00A79D
-// }
-//
-// span {
-//   color: #6D6E71
-// }
-//
-// body {
-//   font-family: 'Open Sans', sans-serif;
-//   text-align: center;
-// }
-// .hero {
-//   height: 100%;
-//   background: #E5F3F2;
-//   text-align: center;
-//   padding: 30px;
-// }
-//
-// input {
-//   font-size: 25px;
-//   color: "black";
-//   width: 50%;
-//   margin: 10px;
-//   outline: none;
-// }
-//
-// button {
-//   color: #FFFFFF;
-//   background-color: #00A79D;
-//   border: none;
-//   font-size: 20px;
-//   color: "black";
-//   width: 7%;
-//   margin: 10px;
-//   outline: none;
-// }
-// button:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .show-more-todos{
-//   width: 15%;
-// }
-//
-// .save-btn {
-//   color: #FFFFFF;
-//   background-color: #00A79D;
-//   font-size: 20px;
-//   border: none;
-//   height: 30px;
-// }
-//
-// .save-btn:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .show-completed-btn {
-//   color: #FFFFFF;
-//   background-color: #00A79D;
-//   font-size: 20px;
-//   border:none;
-//   height: 30px;
-// }
-//
-// .show-completed-btn:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .list {
-//   height: 100%;
-//   padding: 30px;
-// }
-//
-// ul {
-//   width: 50%;
-//   margin: auto;
-// }
-//
-// li {
-//   font-size: 20px;
-//   text-align: left;
-//   border-bottom: 1px solid #D1D3D4;
-//   padding: 25px;
-//   width: 100%;
-//   height: 100%;
-// }
-//
-// .completed .first-line{
-//   text-decoration: line-through;
-//   color: red;
-// }
-//
-// .completed .importance-rating{
-//   text-decoration: line-through;
-//   color: red;
-// }
-//
-// .completed .task{
-//   text-decoration: line-through;
-//   color: red;
-// }
-// .completed {
-//   text-decoration: line-through;
-//   color: red;
-// }
-//
+
 // .title {
 //   font-size: 30px;
 //   font-family: 'Roboto Slab', serif;
@@ -247,28 +208,9 @@ button {
 //   color:#6D6E71;
 //   font-size: 15px;
 // }
-//
-// .first-line {
-//   padding-bottom: 20px;
-// }
-//
-// .second-line{
-//   padding-bottom: 20px;
-// }
-//
-// .third-line {
-//   padding-bottom: 20px;
-// }
-//
-// .up-btn {
-//   background-image: url('images/upvote.svg');
-//   background-color: transparent;
-//   border: none;
-//   height: 30px;
-//   width: 30px;
-//   padding: 10px;
-// }
-//
+
+
+
 // .up-btn:hover {
 //   background-image: url('images/upvote-hover.svg');
 //   background-color: transparent;
@@ -276,7 +218,7 @@ button {
 //   height: 30px;
 //   width: 30px;
 // }
-//
+
 // .down-btn {
 //   background-image: url('images/downvote.svg');
 //   background-color: transparent;
@@ -308,26 +250,8 @@ button {
 //   height: 30px;
 //   width: 30px;
 // }
-//
-// .completed-btn {
-//   background-color: #00A79D;
-//   border: none;
-//   color: #FFFFFF;
-//   float: right;
-//   font-size: 20px;
-//   height: 100%;
-//   width: 25%;
-// }
-//
-// .completed-btn:hover {
-//   background-color: #045E55;
-//   cursor: pointer;
-// }
-//
-// .todo-count-output {
-//   color: white;
-// }
-//
+
+
 //
 // @media screen and (max-width: 600px){
 //   .hero {
