@@ -124,6 +124,9 @@ button {
     border-bottom: $border-bottom;
     width: $input-width;
     margin: auto;
+    @media screen and (max-width: $break-large){
+      width: $input-width/2;
+    }
   }
   .show-completed-btn{
     background-color: $button-background-color;
