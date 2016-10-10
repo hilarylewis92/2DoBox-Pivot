@@ -15,7 +15,7 @@ $color-light-red: rgb(179, 115, 118);
 
 
 //input fields
-$input-width: 50em;
+$input-width: 40em;
 $input-height:
 30px;
 $input-background-color: $color-cream;
@@ -49,3 +49,6 @@ $title-width: 20em;
 
 //completed items
 $completed-color: $color-red;
+
+//responsiveness
+$break-responsive: 570px;

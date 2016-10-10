@@ -38,6 +38,9 @@ button {
     background-color: $input-background-color;
     color: $input-color;
     outline: none;
+    @media screen and (max-width: $break-responsive){
+      width: $input-width/2;
+    }
   }
   .save-btn {
     background-color: $button-background-color;
@@ -118,6 +121,7 @@ button {
     margin: auto;
     padding: $main-padding;
     li {
+      margin: auto;
       font-size: $page-text-size;
       color: $page-text-color;
       text-align: left;
