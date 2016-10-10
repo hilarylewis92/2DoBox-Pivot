@@ -18,6 +18,11 @@ button {
     background-color: $button-hover-color;
     cursor: pointer;
   }
+  @media screen and (max-width: $break-large){
+    display: block;
+    text-align: center;
+    width: $input-width/3;
+  }
 }
 
 .hero {
@@ -38,7 +43,7 @@ button {
     background-color: $input-background-color;
     color: $input-color;
     outline: none;
-    @media screen and (max-width: $break-responsive){
+    @media screen and (max-width: $break-large){
       width: $input-width/2;
     }
   }
@@ -73,11 +78,17 @@ button {
     background-color: $input-background-color;
     color: $input-color;
     outline: none;
+    @media screen and (max-width: $break-large){
+      width: $input-width/2;
+    }
   }
   .filter-by{
     border-bottom: $border-bottom;
     width: $input-width;
     margin: auto;
+    @media screen and (max-width: $break-large){
+      margin: auto;
+    }
     h3{
       color: $page-text-color;
       font-weight: $page-font-weight;
@@ -89,6 +100,9 @@ button {
       &:hover{
         background-color: $delete-button-hover-color;
         cursor: pointer;
+      }
+      @media screen and (max-width: $break-large){
+        width: $save-remove-btn-width/2;
       }
     }
   }
