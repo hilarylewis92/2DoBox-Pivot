@@ -33,11 +33,21 @@
       </nav> -->
       <nav class="filter-by">
         <h3 class="filter-title">Filter by:</h3>
-        <span>Critical<input type="radio" name="filter" aria-label="critical button" class="critical-btn" value="Critical"></span>
-        <span>High<input type="radio" name="filter" aria-label="high button" class="high-btn" value="High"></span>
-        <span>Normal<input type="radio" name="filter" aria-label="normal button" class="normal-btn" value="Normal"></span>
-        <span>Low<input type="radio" name="filter" aria-label="low button" class="low-btn" value="Low"></span>
-        <span>None<input type="radio" name="filter" aria-label="none button" class="none-btn" value="None"></span>
+        <label for="critical-filter">
+          <span>Critical<input type="radio" name="filter" id="critical-filter" aria-labeledby="filter" class="critical-btn" value="Critical"></span>
+        </label>
+        <label for="high-filter">
+          <span>High<input type="radio" name="filter" id="high-filter" aria-labeledby="filter" class="high-btn" value="High"></span>
+        </label>
+        <label for="normal-filter">
+          <span>Normal<input type="radio" name="filter" id="normal-filter" aria-labeledby="filter" class="normal-btn" value="Normal"></span>
+        </label>
+        <label for="low-filter">
+          <span>Low<input type="radio" name="filter" id="low-filter" aria-labeledby="filter" class="low-btn" value="Low"></span>
+        </label>
+        <label for="none-filter">
+          <span>None<input type="radio" name="filter" id="none-filter" aria-labeledby="filter" class="none-btn" value="None"></span>
+        </label>
         <button type="button" class="remove-filters-btn" aria-label=“remove-filters-btn”>Remove filters</button>
       </nav>
 
