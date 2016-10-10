@@ -28,7 +28,7 @@ describe('attributes on our application',function(){
 
     var allTodos = browser.getText("li");
 
-     assert.equal(allTodos.replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, buy milk now, Importance: Normal');
+     assert.equal(allTodos.replace(/\n/, ", ").replace(/\n\n/, ", ").replace(/\n\n\n/, ", ").replace(/\n/, ", ").replace(/\n/, ", "), 'buy milk, delete task, buy milk now, up vote, down vote, Importance: Normal');
   }); //end of add ideas test
 
   it("should persist data after reload", function () {
