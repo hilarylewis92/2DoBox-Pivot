@@ -24,20 +24,20 @@ $input-color: $color-dark-blue;
 $input-text-align: left;
 
 //buttons
-$button-font-size: 15px;
+$button-font-size: 12px;
 $button-background-color: $color-dark-blue;
 $button-font-color: white;
 $button-width: 80px;
 $save-remove-btn-width: 20em;
 $delete-color: $color-red;
-$delete-completed-width: 9em;
+$delete-completed-width: 8em;
 $button-hover-color: $color-medium-blue;
 $delete-button-hover-color: $color-light-red;
 $filter-by-selected: $color-medium-blue;
 
 //texts
 $page-text-color: $color-dark-blue;
-$page-text-size: 18px;
+$page-text-size: 20px;
 $page-font-weight: bold;
 
 //borders
@@ -45,7 +45,7 @@ $border-bottom: 1px solid #D1D3D4;
 
 //list items
 $tasks-width: 100%;
-$title-width: 20em;
+$title-width: 100%;
 
 //completed items
 $completed-color: $color-red;
