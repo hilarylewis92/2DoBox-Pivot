@@ -284,20 +284,23 @@ describe('attributes on our application',function(){
 
   it("should allow the user to edit title and task/body fields by clicking and typing in their changes; the changes should persist upon page reload", function () {
     browser.url('/');
+
     var todoTitle = browser.element(".title-input");
     var todoTask = browser.element(".task-input");
 
     todoTitle.setValue('buy milk');
     todoTask.setValue('buy milk now');
 
+    // browser.click(".save-btn");
+
     browser.click(".edit-title");
+    browser.keys('cats');
     browser.keys("\uE00D"); //spacebar
-    browser.keys('and get some chocolate bars too.');
     browser.keys("\uE007"); //the enter key
 
     browser.url('/');
 
-    assert.equal(browser.getText(".edit-title")[0], 'buy milk and get some chocolate bars too.');
+    assert.equal(browser.getText(".edit-title")[0], 'buy cats milk');
 
   }); //end of edit title and body
 
