@@ -23,14 +23,13 @@ button {
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: $input-width/3;
+    width: $input-width/2;
   }
 }
 
 .hero {
   background-color: $color-light-blue;
   height: 100%;
-  padding: $main-padding;
   h1 {
     color: $color-dark-blue;
     margin-bottom: $main-margin;
@@ -59,6 +58,9 @@ button {
     &:hover{
       background-color: $button-hover-color;
       cursor: pointer;
+    }
+    @media screen and (max-width: $break-large){
+      width: $input-width/2;
     }
   }
 }
@@ -91,14 +93,24 @@ button {
     border-bottom: $border-bottom;
     width: $input-width;
     margin: auto;
+    @media screen and (max-width: $break-large){
+      width: $input-width/2;
+    }
     h3{
       color: $page-text-color;
       font-weight: $page-font-weight;
       font-size: $page-text-size + 5;
     }
+    label {
+      margin: $main-margin;
+      font-size: $page-text-size;
+      @media screen and (max-width: $break-large){
+        display: block;
+      }
+    }
     .remove-filters-btn {
       background-color: $delete-color;
-      width: $save-remove-btn-width;
+      width: $delete-completed-width;
       &:hover{
         background-color: $delete-button-hover-color;
         cursor: pointer;
