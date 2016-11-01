@@ -2,74 +2,9 @@
 @import 'variables.scss';
 @import "mixins.scss";
 @import "debug.scss";
-// @import "./images/upvote.svg";
-
-* {
-  text-align: center;
-  margin: $main-margin;
-}
-
-button {
-  background-color: $button-background-color;
-  color: $button-font-color;
-  outline: !important;
-  outline-color: red;
-  border: none;
-  font-size: $page-text-size;
-  width: $button-width;
-  &:hover{
-    background-color: $button-hover-color;
-    cursor: pointer;
-  }
-  @media screen and (max-width: $break-large){
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: $input-width/2;
-  }
-}
-
-.hero {
-  background-color: $color-light-blue;
-  height: 100%;
-  h1 {
-    color: $color-dark-blue;
-    margin-bottom: $main-margin;
-    font-size: 70px;
-    font-weight: $page-font-weight;
-  }
-  .title-input, .task-input {
-    width: $input-width;
-    height: $input-height;
-    text-align: $input-text-align;
-    font-size: $page-text-size;
-    background-color: $input-background-color;
-    color: $input-color;
-    outline: !important;
-    outline-color: red;
-    @media screen and (max-width: $break-large){
-      width: $input-width/2;
-    }
-  }
-  .save-btn {
-    background-color: $button-background-color;
-    color: $button-font-color;
-    outline: !important;
-    outline-color: red;
-    border: none;
-    width: $save-remove-btn-width;
-    font-size: $page-text-size;
-    @include save-button(magenta, 1px solid black, 5px);
-    &:hover{
-      background-color: $button-hover-color;
-      cursor: pointer;
-    }
-    @media screen and (max-width: $break-large){
-      width: $input-width/2;
-    }
-  }
-}
+@import "globals.scss";
+@import "buttons.scss";
+@import "hero.scss";
 
 .list {
   background-color: $color-cream;
@@ -158,8 +93,8 @@ button {
       cursor: pointer;
     }
   }
-  ul {
-    li {
+
+    .todo {
       margin: auto;
       font-size: $page-text-size;
       color: $page-text-color;
@@ -171,7 +106,7 @@ button {
         padding: none;
         width: $input-width/2;
       }
-    }
+
     .delete-btn{
       float: right;
       color: $color-cream;
