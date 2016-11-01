@@ -1,26 +1,17 @@
 @import "variables.scss";
-@import "mixins.scss";
+@import "text.scss";
+@import "input-fields.scss";
 
 .hero {
   background-color: $color-light-blue;
   height: 100%;
 
   h1 {
-    color: $color-dark-blue;
-    margin-bottom: $main-margin;
-    font-size: 70px;
-    font-weight: $page-font-weight;
+    @include h1;
   }
 
   .title-input, .task-input {
-    width: $input-width;
-    height: $input-height;
-    text-align: $input-text-align;
-    font-size: $page-text-size;
-    background-color: $input-background-color;
-    color: $input-color;
-    outline: !important;
-    outline-color: red;
+    @include title-and-task-inputs;
 
     @media screen and (max-width: $break-large){
       width: $input-width/2;

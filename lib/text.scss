@@ -1,0 +1,8 @@
+@import "variables.scss";
+
+@mixin h1 {
+  color: $color-dark-blue;
+  margin-bottom: $main-margin;
+  font-size: 70px;
+  font-weight: $page-font-weight;
+}
