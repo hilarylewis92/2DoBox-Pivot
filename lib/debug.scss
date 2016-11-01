@@ -1,9 +1,16 @@
-$debug: true;
+$debug: false;
+
+$debug-border-style: 1px dotted red;
+$debug-background-color: magenta;
 
 @if ($debug) {
 
   section {
-  border: 1px dotted red;
+  border: $debug-border-style;
   }
 
-} //end of if debug statement
+  .todo-list {
+    background-color: $debug-background-color;
+  }
+
+} //end of debug statement
