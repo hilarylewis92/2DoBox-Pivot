@@ -1,5 +1,6 @@
 @import 'reset.scss';
 @import 'variables.scss';
+@import "mixins.scss";
 // @import "./images/upvote.svg";
 
 * {
@@ -58,6 +59,7 @@ button {
     border: none;
     width: $save-remove-btn-width;
     font-size: $page-text-size;
+    @include save-button(magenta, 1px solid black, 5px);
     &:hover{
       background-color: $button-hover-color;
       cursor: pointer;
