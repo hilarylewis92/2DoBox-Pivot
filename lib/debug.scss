@@ -1,0 +1,9 @@
+$debug: true;
+
+@if ($debug) {
+
+  section {
+  border: 1px dotted red;
+  }
+
+} //end of if debug statement
