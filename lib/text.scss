@@ -15,13 +15,33 @@
   padding: $main-padding;
 }
 
-@mixin search-input {
-  width: $input-width;
-  height: $input-height;
-  text-align: $input-text-align;
-  font-size: $page-text-size;
-  background-color: $input-background-color;
-  color: $input-color;
-  outline: !important;
-  outline-color: red;
+@mixin filter-by-h3 {
+  color: $page-text-color;
+  font-weight: $page-font-weight;
+  font-size: $page-text-size + 5;
+}
+
+@mixin title-for-each-todo {
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin-left: $main-margin;
+  font-size: $page-text-size + 15;
+  height: 100%;
+}
+
+@mixin task-output-field-for-each-todo {
+  float: left;
+  text-align: left;
+  width: $tasks-width;
+  height: 30px;
+  margin: $main-margin;
+  height: 100%;
+}
+
+@mixin importance-rating-output {
+  display: block;
+  margin: $main-margin;
+  width: 200px;
+  display: inline-block;
 }

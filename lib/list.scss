@@ -1,5 +1,8 @@
 @import "variables.scss";
 @import "text.scss";
+@import "input-fields.scss";
+@import "labels.scss";
+@import "buttons.scss";
 
 .list {
   background-color: $color-cream;
@@ -24,66 +27,69 @@
     border-bottom: $border-bottom;
     width: $input-width;
     margin: auto;
+
     @media screen and (max-width: $break-large){
-      width: $input-width/2;
+      width: $input-width / 2;
     }
 
-    h3{
-      color: $page-text-color;
-      font-weight: $page-font-weight;
-      font-size: $page-text-size + 5;
+    h3 {
+      @include filter-by-h3;
     }
 
     label {
-      margin: $main-margin;
-      font-size: $page-text-size;
-      outline: !important;
-      outline-color: red;
+      @include filter-by-label;
+
       @media screen and (max-width: $break-large){
         display: block;
       }
+
     }
 
     .remove-filters-btn {
-      background-color: $delete-color;
-      width: $delete-completed-width;
+      @include remove-filters-btn;
+
       &:hover{
         background-color: $delete-button-hover-color;
         cursor: pointer;
       }
+
       @media screen and (max-width: $break-large){
-        width: $save-remove-btn-width/2;
+        width: $save-remove-btn-width / 2;
       }
+
     }
+
   }
+
   .show-completed-delete-section{
     border-bottom: $border-bottom;
     width: $input-width;
     margin: auto;
+
     @media screen and (max-width: $break-large){
       width: $input-width/2;
     }
+
   }
+
   .show-completed-btn{
-    background-color: $button-background-color;
-    color: $button-font-color;
-    outline: !important;
-    outline-color: red;
-    border: none;
-    font-size: $page-text-size;
-    width: $delete-completed-width;
+    @include show-completed-btn;
+
     &:hover{
       background-color: $button-hover-color;
       cursor: pointer;
     }
+
   }
+
   .delete-all-todos{
-    width: $delete-completed-width;
-    background-color: $delete-color;
+    @include delete-all-todos;
+
     &:hover{
       background-color: $delete-button-hover-color;
       cursor: pointer;
     }
+
   }
 
     .todo {
@@ -94,91 +100,83 @@
       width: $input-width;
       border-bottom: $border-bottom;
       padding: $main-padding 0;
+
       @media screen and (max-width: $break-large){
         padding: none;
-        width: $input-width/2;
+        width: $input-width / 2;
       }
 
     .delete-btn{
-      float: right;
-      color: $color-cream;
-      background-color: $delete-color;
-      width: $delete-completed-width;
+      @include delete-indiv-todo-button;
+
       &:hover{
         background-color: $delete-button-hover-color;
         cursor: pointer;
       }
+
       @media screen and (max-width: $break-large){
         margin-right: $main-margin;
       }
-    }
-    .title{
-      display: inline-block;
-      text-align: left;
-      float: left;
-      margin-left: $main-margin;
-      font-size: $page-text-size + 15;
-      height: 100%;
-    }
-    .task{
-      float: left;
-      text-align: left;
-      width: $tasks-width;
-      height: 30px;
-      margin: $main-margin;
-      height: 100%;
 
     }
+
+    .title{
+      @include title-for-each-todo;
+    }
+
+    .task{
+      @include task-output-field-for-each-todo;
+    }
+
     .down-btn, .up-btn{
-      float: left;
-      width: $delete-completed-width;
-      background-color: $button-background-color;
+      @include upvote-and-downvote-buttons;
+
       &:hover{
         background-color: $button-hover-color;
         cursor: pointer;
       }
+
       @media screen and (max-width: $break-large){
         margin: $main-margin/2;
       }
+
     }
+
     .importance-rating {
-      display: block;
-      margin: $main-margin;
-      width: 200px;
-      display: inline-block;
+      @include importance-rating-output;
+
       @media screen and (max-width: $break-large){
         text-align: left;
       }
+
     }
+
     .completed-btn {
-      float: right;
-      font-size: $page-text-size;
-      font-weight: normal;
-      background-color: $button-background-color;
-      color: $color-cream;
-      outline: none;
-      border: none;
-      display: inline-block;
-      width: $delete-completed-width;
+      @include completed-btn;
+
       &:hover{
         background-color: $button-hover-color;
         cursor: pointer;
       }
+
       @media screen and (max-width: $break-large){
         margin: $main-margin;
       }
+
     }
+
   }
+
   .show-more-todos{
-    width: $delete-completed-width;
-    font-size: $page-text-size;
-    color: $color-cream;
-    font-weight: normal;
+    @include show-more-todos-button;
+
     &:hover{
       background-color: $button-hover-color;
       cursor: pointer;
     }
+
   }
+
 }
 
 .completed .title,.completed .task, .completed .importance-rating{
