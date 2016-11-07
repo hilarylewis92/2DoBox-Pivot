@@ -1,14 +1,11 @@
 @import "variables.scss";
+@import "text.scss";
 
 .list {
   background-color: $color-cream;
 
   .count{
-    height: 20px;
-    color: $page-text-color;
-    font-weight: $page-font-weight;
-    font-size: $page-text-size + 5;
-    padding: $main-padding;
+    @include count;
   }
 
   .todo-count-output {
@@ -16,30 +13,27 @@
   }
 
   .search-input {
-    width: $input-width;
-    height: $input-height;
-    text-align: $input-text-align;
-    font-size: $page-text-size;
-    background-color: $input-background-color;
-    color: $input-color;
-    outline: !important;
-    outline-color: red;
+    @include search-input;
+
     @media screen and (max-width: $break-large){
-      width: $input-width/2;
+      width: $input-width / 2;
     }
   }
-  .filter-by{
+
+  .filter-by {
     border-bottom: $border-bottom;
     width: $input-width;
     margin: auto;
     @media screen and (max-width: $break-large){
       width: $input-width/2;
     }
+
     h3{
       color: $page-text-color;
       font-weight: $page-font-weight;
       font-size: $page-text-size + 5;
     }
+
     label {
       margin: $main-margin;
       font-size: $page-text-size;
@@ -49,6 +43,7 @@
         display: block;
       }
     }
+
     .remove-filters-btn {
       background-color: $delete-color;
       width: $delete-completed-width;
